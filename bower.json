@@ -1,0 +1,21 @@
+{
+  "name": "ArmandoAssuncao",
+  "description": "Site pessoal de Armando Assuncao",
+  "main": "index.js",
+  "authors": [
+    "Armando Assuncao"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "http://armandoassuncao.github.io",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-material": "~1.0.5"
+  }
+}

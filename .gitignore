@@ -1,0 +1,3 @@
+node_modules/
+src/static/js/third_party/
+.sass-cache

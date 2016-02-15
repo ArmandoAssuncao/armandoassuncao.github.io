@@ -14,7 +14,7 @@ module.exports = function(grunt){
 			src_jade: '<%= project.src %>/jade',
 			src_sass: '<%= project.src %>/sass',
 
-			dist: '<%= project.app %>dist',
+			dist: '<%= project.app %>',
 			dist_static: '<%= project.dist %>/static',
 			dist_static_css: '<%= project.dist_static %>/css',
 			dist_static_js: '<%= project.dist_static %>/js',
@@ -139,8 +139,9 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('dev', ['mkdir', 'sass:dev', 'jade:dev', 'cssmin', 'uglify:dev']);
+	grunt.registerTask('dev', ['sass:dev', 'jade:dev', 'cssmin', 'uglify:dev']);
 	grunt.registerTask('default', []);
+	grunt.registerTask('dist', ['mkdir'];
 
 
 	grunt.log.write();

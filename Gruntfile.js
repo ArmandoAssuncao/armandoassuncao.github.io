@@ -14,7 +14,7 @@ module.exports = function(grunt){
 			src_jade: '<%= project.src %>/jade',
 			src_sass: '<%= project.src %>/sass',
 
-			dist: '<%= project.app %>',
+			dist: '<%= project.app %>dist',
 			dist_static: '<%= project.dist %>/static',
 			dist_static_css: '<%= project.dist_static %>/css',
 			dist_static_js: '<%= project.dist_static %>/js',
@@ -42,6 +42,115 @@ module.exports = function(grunt){
 				}
 			}
 		},
+
+		copy: {
+			options: {
+				timestamp: true
+			},
+			dev: {
+
+			},
+			dist_css: {
+				files: [
+					{
+						expand: true,
+						src: ['<%= project.src_static_css %>/*.min.css'],
+						dest: '<%= project.dist_static_css %>/',
+						filter: 'isFile',
+						flatten: true
+					}
+				]
+			},
+			dist_html: {
+				files: [
+					{
+						expand: true,
+						src: ['<%= project.src %>/index.html'],
+						dest: '<%= project.dist %>/',
+						filter: 'isFile',
+						flatten: true
+					}
+				]	
+			},
+			dist_js: {
+				files: [
+					{ // scripts.js
+						expand: true,
+						src: ['<%= project.src_static_js %>/scripts.min.js', '<%= project.src_static_js %>/scripts.min.js.map'],
+						dest: '<%= project.dist_static_js %>/',
+						filter: 'isFile',
+						flatten: true
+					},
+					{ // angular js
+						expand: true,
+						src: ['<%= project.src_static_js_third_party %>/angular-bundle.min.js', '<%= project.src_static_js_third_party %>/angular-bundle.min.js.map'],
+						dest: '<%= project.dist_static_js_third_party %>/',
+						filter: 'isFile',
+						flatten: true
+					},
+				]
+			}
+		},
+
+
+		cssmin: {
+			dev: {
+				options: {
+					report: 'gzip',
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= project.src_static_css %>',
+					src: ['*.css', '!*.min.css'],
+					dest: '<%= project.src_static_css %>',
+					ext: '.min.css'
+				}]
+			},
+			dist: {
+				options: {
+					report: 'gzip',
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= project.src_static_css %>',
+					src: ['*.css', '!*.min.css'],
+					dest: '<%= project.src_static_css %>',
+					ext: '.min.css'
+				}]
+			}
+		},
+
+
+		jade: {
+			dev: {
+				options: {
+					pretty: true,
+					data: {debug: true}
+				},
+				files: {
+					'<%= project.src %>/index.html': ['<%= project.src_jade %>/index.jade']
+				}
+			},
+			dist: {
+				files: {
+					'<%= project.src %>/index.html': ['<%= project.src_jade %>/index.jade']
+				}
+			}
+		},
+
+
+		sass: {
+			dev: {
+				options: {
+					style: 'nested',
+					trace: true
+				}, 
+				files: {
+					'<%= project.src_static_css %>/styles.css': '<%= project.src_sass %>/styles.scss'
+				}
+			},
+		},
+
 
 		uglify: {
 			options: {
@@ -71,66 +180,13 @@ module.exports = function(grunt){
 			},
 			dev: {
 				files: {
-					'<%= project.src_static_js %>/script.min.js': [
+					'<%= project.src_static_js %>/scripts.min.js': [
 						'<%= project.src_static_js %>/*.js',
 						'!<%= project.src_static_js %>/*.min.js'
 					]
 				}
 			}
 		},
-
-
-		cssmin: {
-			dev: {
-				options: {
-					report: 'gzip',
-				},
-				files: [{
-					expand: true,
-					cwd: '<%= project.src_static_css %>',
-					src: ['*.css', '!*.min.css'],
-					dest: '<%= project.src_static_css %>',
-					ext: '.min.css'
-				}]
-			}
-		},
-
-		jade: {
-			dev: {
-				options: {
-					pretty: true,
-					data: {debug: true}
-				},
-				files: {
-					'<%= project.src %>/index.html': ['<%= project.src_jade %>/index.jade']
-				}
-			},
-			dist: {
-				files: {
-					'<%= project.src %>/index.html': ['<%= project.src_jade %>/index.jade']
-				}
-			}
-		},
-
-		sass: {
-			dev: {
-				options: {
-					style: 'nested',
-					trace: true
-				}, 
-				files: {
-					'<%= project.src_static_css %>/styles.css': '<%= project.src_sass %>/styles.scss'
-				}
-			},
-			dist:{
-				options: {
-
-				}, 
-				files: {
-
-				}	
-			}
-		}
 	});
 
 	grunt.loadNpmTasks('grunt-mkdir');
@@ -138,11 +194,11 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-newer');
 
-	grunt.registerTask('dev', ['sass:dev', 'jade:dev', 'cssmin', 'uglify:dev']);
+	grunt.registerTask('dev', ['sass:dev', 'newer:jade:dev', 'cssmin:dev', 'newer:uglify:dev', 'newer:uglify:dev_third_party_angular']);
 	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['mkdir'];
+	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js']);
 
-
-	grunt.log.write();
 };

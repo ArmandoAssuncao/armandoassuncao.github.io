@@ -47,6 +47,12 @@ module.exports = function(grunt){
 			options: {
 				timestamp: true
 			},
+			dist_to_app: {
+				expand: true,
+				cwd: '<%= project.dist %>',
+				src: '**',
+				dest: '<%= project.app %>',
+			},
 			dev: {
 
 			},
@@ -187,6 +193,13 @@ module.exports = function(grunt){
 				}
 			}
 		},
+
+		clean: {
+			options: {
+				'no-write': false,
+			},
+			dist: ['<%= project.dist %>', '!<%= project.app %>', '!<%= project.src %>']
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-mkdir');
@@ -196,9 +209,11 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-newer');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.registerTask('dev', ['sass:dev', 'newer:jade:dev', 'cssmin:dev', 'newer:uglify:dev', 'newer:uglify:dev_third_party_angular']);
 	grunt.registerTask('default', []);
 	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js']);
+	grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 
 };

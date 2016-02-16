@@ -152,7 +152,8 @@ module.exports = function(grunt){
 					trace: true
 				}, 
 				files: {
-					'<%= project.src_static_css %>/styles.css': '<%= project.src_sass %>/styles.scss'
+					'<%= project.src_static_css %>/styles.css': ['<%= project.src_sass %>/styles.scss'],
+					'<%= project.src_static_css %>/plugins.css': ['<%= project.src_sass %>/plugins.scss'],
 				}
 			},
 		},
@@ -199,6 +200,32 @@ module.exports = function(grunt){
 				'no-write': false,
 			},
 			dist: ['<%= project.dist %>', '!<%= project.app %>', '!<%= project.src %>']
+		},
+
+		watch: {
+			scss: {
+				files: ['<%= project.src_sass %>/*.scss'],
+				tasks: ['sass'],
+			},
+			jade: {
+				files: ['<%= project.src_jade %>/index.jade', '<%= project.src_jade %>/*.html'],
+				tasks: ['jade:dev']
+			}
+		},
+
+		processhtml: {
+			dist: {
+				options: {
+					process: true,
+					data: {
+						title: 'My app',
+						message: 'This is production distribution'
+					}
+				},
+				files: {
+					'<%= project.dist %>/index.html': ['<%= project.dist %>/index.html']
+				}
+			}
 		}
 	});
 
@@ -210,10 +237,12 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-processhtml');
 
-	grunt.registerTask('dev', ['sass:dev', 'newer:jade:dev', 'cssmin:dev', 'newer:uglify:dev', 'newer:uglify:dev_third_party_angular']);
+	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'newer:uglify:dev_third_party_angular', 'watch']);
 	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js']);
+	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'processhtml:dist']);
 	grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 
 };

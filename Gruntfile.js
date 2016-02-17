@@ -95,6 +95,16 @@ module.exports = function(grunt){
 						flatten: true
 					},
 				]
+			},
+			dist_img: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src_static_img %>',
+						src: '**',
+						dest: '<%= project.dist_static_img %>',
+					},
+				]
 			}
 		},
 
@@ -242,7 +252,7 @@ module.exports = function(grunt){
 
 	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'watch']);
 	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'processhtml:dist']);
+	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'copy:dist_img', 'processhtml:dist']);
 	grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 
 };

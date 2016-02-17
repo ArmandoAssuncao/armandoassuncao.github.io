@@ -240,7 +240,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-processhtml');
 
-	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'newer:uglify:dev_third_party_angular', 'watch']);
+	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'watch']);
 	grunt.registerTask('default', []);
 	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'processhtml:dist']);
 	grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);

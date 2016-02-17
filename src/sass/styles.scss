@@ -2,9 +2,34 @@
 
 body{
 	background-color: $primaryColor;
+	color: $fontColor;
+}
+
+nav{
+	background-color: $secondaryColor;
+}
+
+footer{
+	background-color: $secondaryColor;
 }
 
 .container {
-    margin: 0 auto;
-    width: 85%;
+	margin: 0 auto;
+	width: 85%;
+}
+
+#foto{
+	width: 150px;
+	height: 150px;
+}
+
+//helpers /////////
+
+.center-align{
+	margin: 0 auto;
+}
+
+.img-size-128{
+	width: 128px;
+	height: 128px;
 }

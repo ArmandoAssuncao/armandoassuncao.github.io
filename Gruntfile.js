@@ -220,6 +220,10 @@ module.exports = function(grunt){
 			jade: {
 				files: ['<%= project.src_jade %>/index.jade', '<%= project.src_jade %>/*.html'],
 				tasks: ['jade:dev']
+			},
+			js: {
+				files: ['<%= project.src_static_js %>/*.js', '!<%= project.src_static_js %>/*.min.js'],
+				tasks: ['uglify:dev']
 			}
 		},
 

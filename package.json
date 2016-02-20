@@ -26,6 +26,8 @@
     "grunt-newer": "~1.1.2",
     "grunt-contrib-clean": "~1.0.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-processhtml": "~0.3.11"
+    "grunt-processhtml": "~0.3.11",
+    "grunt-http-server": "~1.14.0",
+    "grunt-concurrent": "~2.2.1"
   }
 }

@@ -9,17 +9,19 @@ module.exports = function(grunt){
 			src_static: '<%= project.src %>/static',
 			src_static_css: '<%= project.src_static %>/css',
 			src_static_js: '<%= project.src_static %>/js',
-			src_static_js_third_party: '<%= project.src_static_js %>/third_party',
+			src_static_third_party: '<%= project.src_static %>/third_party',
 			src_static_img: '<%= project.src_static %>/img',
+			src_static_fonts: '<%= project.src_static %>/fonts',
 			src_jade: '<%= project.src %>/jade',
 			src_sass: '<%= project.src %>/sass',
 
-			dist: '<%= project.app %>dist',
+			dist: '<%= project.app %>',
 			dist_static: '<%= project.dist %>/static',
 			dist_static_css: '<%= project.dist_static %>/css',
 			dist_static_js: '<%= project.dist_static %>/js',
-			dist_static_js_third_party: '<%= project.dist_static_js %>/third_party',
+			dist_static_third_party: '<%= project.dist_static %>/third_party',
 			dist_static_img: '<%= project.dist_static %>/img',
+			dist_static_fonts: '<%= project.dist_static %>/fonts',
 		},
 
 		tag: {
@@ -36,11 +38,32 @@ module.exports = function(grunt){
 						'<%= project.dist_static %>',
 						'<%= project.dist_static_css %>',
 						'<%= project.dist_static_js %>',
-						'<%= project.dist_static_js_third_party %>',
+						'<%= project.dist_static_third_party %>',
 						'<%= project.dist_static_img %>',
+						'<%= project.dist_static_fonts %>',
 					]
 				}
 			}
+		},
+
+		'http-server': {
+			dev: {
+				root: '<%= project.src %>',
+            	port: 8081,
+            	host: "localhost",
+			},
+			dist: {
+				root: '<%= project.dist %>',
+            	port: 8082,
+            	host: "localhost",
+			}
+		},
+
+		concurrent: {
+			options: {
+				logConcurrentOutput: true,
+			},
+			tasks: ['http-server:dev', 'watch']
 		},
 
 		copy: {
@@ -53,9 +76,19 @@ module.exports = function(grunt){
 				src: '**',
 				dest: '<%= project.app %>',
 			},
-			dev: {
-
+			//dev
+			dev_fonts: {
+				files: [
+					{
+						expand: true,
+						src: ['<%= project.src_static_third_party %>/font-awesome/fonts/*.*'],
+						dest: '<%= project.src_static_fonts %>/',
+						filter: 'isFile',
+						flatten: true
+					}
+				]
 			},
+			//dist
 			dist_css: {
 				files: [
 					{
@@ -89,8 +122,8 @@ module.exports = function(grunt){
 					},
 					{ // angular js
 						expand: true,
-						src: ['<%= project.src_static_js_third_party %>/angular-bundle.min.js', '<%= project.src_static_js_third_party %>/angular-bundle.min.js.map'],
-						dest: '<%= project.dist_static_js_third_party %>/',
+						src: ['<%= project.src_static_third_party %>/angular-bundle.min.js', '<%= project.src_static_third_party %>/angular-bundle.min.js.map'],
+						dest: '<%= project.dist_static_third_party %>/',
 						filter: 'isFile',
 						flatten: true
 					},
@@ -103,6 +136,16 @@ module.exports = function(grunt){
 						cwd: '<%= project.src_static_img %>',
 						src: '**',
 						dest: '<%= project.dist_static_img %>',
+					},
+				]
+			},
+			dist_fonts: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src_static_fonts %>',
+						src: '**',
+						dest: '<%= project.dist_static_fonts %>',
 					},
 				]
 			}
@@ -181,12 +224,12 @@ module.exports = function(grunt){
 			},
 			dev_third_party_angular: {
 				files: {
-					'<%= project.src_static_js_third_party %>/angular-bundle.min.js': [
-						'<%= project.src_static_js_third_party %>/angular/angular.min.js',
-						'<%= project.src_static_js_third_party %>/angular-animate/angular-animate.min.js',
-						'<%= project.src_static_js_third_party %>/angular-aria/angular-aria.min.js',
-						'<%= project.src_static_js_third_party %>/angular-material/angular-material.min.js',
-						'<%= project.src_static_js_third_party %>/angular-messages/angular-messages.min.js',
+					'<%= project.src_static_third_party %>/angular-bundle.min.js': [
+						'<%= project.src_static_third_party %>/angular/angular.min.js',
+						'<%= project.src_static_third_party %>/angular-animate/angular-animate.min.js',
+						'<%= project.src_static_third_party %>/angular-aria/angular-aria.min.js',
+						'<%= project.src_static_third_party %>/angular-material/angular-material.min.js',
+						'<%= project.src_static_third_party %>/angular-messages/angular-messages.min.js',
 					],
 				}
 			},
@@ -253,10 +296,12 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-processhtml');
+	grunt.loadNpmTasks('grunt-http-server');
+	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'watch']);
+	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'newer:copy:dev_fonts', 'concurrent:tasks']);
 	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'copy:dist_img', 'processhtml:dist']);
-	grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
+	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'copy:dist_img', 'copy:dist_fonts', 'processhtml:dist', 'http-server:dist']);
+	//grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 
 };

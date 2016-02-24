@@ -1,16 +1,24 @@
-<footer layout="row" layout-align="center end">
+<footer layout="column" layout-align="center end">
 	<md-toolbar>
 		<div class="container">
-			<div class="md-toolbar-tools layout-row center-align">
-				<h3>Contato</h3>
-				<ul class="layout-wrap layout-row" layout-wrap="" layout="row" id="social">
+			<div class="md-toolbar-tools" layout="row" layout-align="center center">
+				<div flex="20"></div>
+				<div id="btn_contact" flex="60" layout="row" layout-align="center center">
+					<h3>Contato</h3>
+				</div>
+				<!--<div flex="60" layout="row" layout-sm="column" layout-align="center" ng-controller="BottomSheetContactForm">
+					<md-button flex="30" class="md-primary md-raised" ng-click="showListBottomSheet()">Contato</md-button>
+				</div>-->
+				<ul id="social" flex="20" layout="row" layout-align="end center">
 					<li><i class="fa fa-facebook-square small"></i></li>
 					<li><i class="fa fa-github small"></i></li>
 					<li><i class="fa fa-linkedin-square small"></i></li>
 					<li><i class="fa fa-angellist small"></i></li>
 				</ul>
-				
 			</div>
 		</div>
 	</md-toolbar>
+	<div id="contact_form">
+	
+	</div>
 </footer>

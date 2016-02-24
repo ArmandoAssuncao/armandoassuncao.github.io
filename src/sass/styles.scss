@@ -1,16 +1,36 @@
 @import "variables";
 
-body{
+body {
 	background-color: $primaryColor;
 	color: $fontColor;
 }
 
-nav{
+nav {
 	//background-color: $secondaryColor;
 }
 
-footer{
+footer {
 	//background-color: $secondaryColor;
+	bottom: 0;
+
+	#contact_form {
+		position: fixed;
+		height: 300px;
+		width: 100%;
+		background-color: blue;
+	}
+}
+
+main {
+	padding: 20px 0;
+}
+
+#description {
+	margin-top: 20px;
+	width: 50%;
+	text-transform: capitalize;
+	text-align: justify;
+	letter-spacing: 2px;
 }
 
 .container {
@@ -23,6 +43,17 @@ footer{
 	height: 150px;
 }
 
+#social {
+	li {
+		margin-right: 13px;
+
+		.small {
+			font-size: 1.5em;
+		}
+	}
+}
+
+
 //helpers /////////
 
 .center-align {
@@ -34,12 +65,10 @@ footer{
 	height: 128px;
 }
 
-#social {
-	li {
-		margin-right: 13px;
-
-		.small {
-			font-size: 1.5em;
-		}
-	}
+.circular {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    background-size: 100% 100%;
 }

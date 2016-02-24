@@ -127,6 +127,13 @@ module.exports = function(grunt){
 						filter: 'isFile',
 						flatten: true
 					},
+					{ // plugins
+						expand: true,
+						src: ['<%= project.src_static_third_party %>/plugins.min.js'],
+						dest: '<%= project.dist_static_third_party %>/',
+						filter: 'isFile',
+						flatten: true
+					},
 				]
 			},
 			dist_img: {
@@ -235,12 +242,15 @@ module.exports = function(grunt){
 			},
 			dev_third_party: {
 				files: {
-
+					'<%= project.src_static_third_party %>/plugins.min.js': [
+						'<%= project.src_static_third_party %>/jquery/dist/jquery.min.js',
+					],
 				}
 			},
 			dev: {
 				files: {
 					'<%= project.src_static_js %>/scripts.min.js': [
+						'<%= project.src_static_js %>/module.js',
 						'<%= project.src_static_js %>/*.js',
 						'!<%= project.src_static_js %>/*.min.js'
 					]
@@ -299,7 +309,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-http-server');
 	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'newer:copy:dev_fonts', 'concurrent:tasks']);
+	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'newer:uglify:dev_third_party', 'newer:copy:dev_fonts', 'concurrent:tasks']);
 	grunt.registerTask('default', []);
 	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'copy:dist_img', 'copy:dist_fonts', 'processhtml:dist', 'http-server:dist']);
 	//grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);

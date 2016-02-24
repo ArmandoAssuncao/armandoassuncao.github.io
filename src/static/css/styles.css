@@ -1,6 +1,24 @@
 body {
-  background-color: #616161;
+  background-color: #252525;
   color: white; }
+
+footer {
+  bottom: 0; }
+  footer #contact_form {
+    position: fixed;
+    height: 300px;
+    width: 100%;
+    background-color: blue; }
+
+main {
+  padding: 20px 0; }
+
+#description {
+  margin-top: 20px;
+  width: 50%;
+  text-transform: capitalize;
+  text-align: justify;
+  letter-spacing: 2px; }
 
 .container {
   margin: 0 auto;
@@ -10,6 +28,11 @@ body {
   width: 150px;
   height: 150px; }
 
+#social li {
+  margin-right: 13px; }
+  #social li .small {
+    font-size: 1.5em; }
+
 .center-align {
   margin: 0 auto; }
 
@@ -17,9 +40,11 @@ body {
   width: 128px;
   height: 128px; }
 
-#social li {
-  margin-right: 13px; }
-  #social li .small {
-    font-size: 1.5em; }
+.circular {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  background-size: 100% 100%; }
 
 /*# sourceMappingURL=styles.css.map */

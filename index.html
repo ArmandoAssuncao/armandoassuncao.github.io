@@ -49,24 +49,42 @@
 <main layout="column" flex="100">
 	<div layout="row" class="layout-row">
 		<div class="center-align">
-			<img src="static/img/user.png" id="foto">
+			<img src="static/img/user.png" id="foto" class="circular">
 		</div>
 	</div>
+	<div layout="row" flex flex="50" id="description" class="center-align">
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae volutpat ipsum,
+		sit amet ultricies ligula. Nullam felis magna, mattis quis tempus eget, ullamcorper quis nunc.
+		Duis sem ante, accumsan eget leo a, pretium bibendum justo. Ut condimentum, ex tincidunt porttitor rutrum,
+		ante sem varius leo, nec imperdiet erat eros tincidunt purus. Nulla luctus mollis dui, eu accumsan nisi consequat at.
+		Curabitur iaculis ultricies nunc a ornare. Sed lacinia id nisl quis tincidunt.
+		</p>
+	</div>
 </main>
-<footer layout="row" layout-align="center end">
+<footer layout="column" layout-align="center end">
 	<md-toolbar>
 		<div class="container">
-			<div class="md-toolbar-tools layout-row center-align">
-				<h3>Contatos</h3>
-				<ul class="layout-wrap layout-row" layout-wrap="" layout="row" id="social">
+			<div class="md-toolbar-tools" layout="row" layout-align="center center">
+				<div flex="20"></div>
+				<div id="btn_contact" flex="60" layout="row" layout-align="center center">
+					<h3>Contato</h3>
+				</div>
+				<!--<div flex="60" layout="row" layout-sm="column" layout-align="center" ng-controller="BottomSheetContactForm">
+					<md-button flex="30" class="md-primary md-raised" ng-click="showListBottomSheet()">Contato</md-button>
+				</div>-->
+				<ul id="social" flex="20" layout="row" layout-align="end center">
 					<li><i class="fa fa-facebook-square small"></i></li>
 					<li><i class="fa fa-github small"></i></li>
 					<li><i class="fa fa-linkedin-square small"></i></li>
 					<li><i class="fa fa-angellist small"></i></li>
 				</ul>
-				
 			</div>
 		</div>
 	</md-toolbar>
+	<div id="contact_form">
+	
+	</div>
 </footer><script type="text/javascript" src="static/third_party/angular-bundle.min.js"></script>
+<script type="text/javascript" src="static/third_party/plugins.min.js"></script>
 <script type="text/javascript" src="static/js/scripts.min.js"></script></body></html>

@@ -4,11 +4,10 @@ body {
 
 footer {
   bottom: 0; }
-  footer #contact_form {
+  footer #container_contact_form {
     position: fixed;
-    height: 300px;
     width: 100%;
-    background-color: blue; }
+    background-color: #1a1a1a; }
 
 main {
   padding: 20px 0; }
@@ -36,6 +35,9 @@ main {
 .center-align {
   margin: 0 auto; }
 
+.vertical-align {
+  vertical-align: middle; }
+
 .img-size-128 {
   width: 128px;
   height: 128px; }
@@ -46,5 +48,16 @@ main {
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   background-size: 100% 100%; }
+
+.prefix {
+  float: left;
+  left: -40px;
+  position: relative; }
+
+.icon-large {
+  font-size: 32px; }
+
+.white-text {
+  color: white; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -82,8 +82,45 @@
 			</div>
 		</div>
 	</md-toolbar>
-	<div id="contact_form">
-	
+
+	<div id="container_contact_form">
+		<div class="container">
+			<div layout="row" layout-wrap layout-align="center">
+				<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-sm="100" flex-md="70" flex-gt-md="70">
+					<div layout="row" layout-wrap layout-align="center center">
+						<div layout="row" layout-wrap flex='100' layout-align="center center">
+							<!-- Nome-->
+							<md-input-container flex="100" flex-gt-sm="45" class="md-icon-float md-primary hue-3">
+								<i class="material-icons prefix icon-large white-text">account_circle</i>
+								<label class="white-text">Nome</label>
+								<md-icon class="name"></md-icon>
+								<input id="form-name" name="name" type="text">
+							</md-input-container>
+							<span flex></span>
+							<!-- Email-->
+							<md-input-container flex="100" flex-gt-sm="50" class="md-icon-float">
+								<i class="material-icons prefix icon-large white-text">email</i>
+								<label class="white-text">Email</label>
+								<md-icon class="email"></md-icon>
+								<input id="form-email" name="email" type="email">
+							</md-input-container>
+							<!-- Message-->
+							<md-input-container flex="100" class="md-icon-float">
+								<i class="material-icons prefix icon-large white-text">message</i>
+								<label class="white-text">Mensagem</label>
+								<md-icon class="message"></md-icon>
+								<input id="form-message" name="message" type="text">
+							</md-input-container>
+							<!-- Button -->
+							<md-button flex="50" id="form-submit" class="md-primary md-hue-2 md-raised btn-send" ng-click="submitForm($event)">
+								Enviar <i class="material-icons white-text vertical-align">send</i>
+							</md-button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- Feedback removido -->
+		</div>
 	</div>
 </footer><script type="text/javascript" src="static/third_party/angular-bundle.min.js"></script>
 <script type="text/javascript" src="static/third_party/plugins.min.js"></script>

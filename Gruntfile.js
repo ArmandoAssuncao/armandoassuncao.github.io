@@ -3,9 +3,9 @@ module.exports = function(grunt){
 		pkg: grunt.file.readJSON('package.json'),
 
 		project: {
-			app: './',
+			app: '.',
 
-			src: '<%= project.app %>src',
+			src: '<%= project.app %>/src',
 			src_static: '<%= project.src %>/static',
 			src_static_css: '<%= project.src_static %>/css',
 			src_static_js: '<%= project.src_static %>/js',
@@ -89,28 +89,6 @@ module.exports = function(grunt){
 				]
 			},
 			//dist
-			dist_css: {
-				files: [
-					{
-						expand: true,
-						src: ['<%= project.src_static_css %>/*.min.css'],
-						dest: '<%= project.dist_static_css %>/',
-						filter: 'isFile',
-						flatten: true
-					}
-				]
-			},
-			dist_html: {
-				files: [
-					{
-						expand: true,
-						src: ['<%= project.src %>/index.html'],
-						dest: '<%= project.dist %>/',
-						filter: 'isFile',
-						flatten: true
-					}
-				]	
-			},
 			dist_js: {
 				files: [
 					{ // scripts.js
@@ -129,7 +107,7 @@ module.exports = function(grunt){
 					},
 					{ // plugins
 						expand: true,
-						src: ['<%= project.src_static_third_party %>/plugins.min.js'],
+						src: ['<%= project.src_static_third_party %>/plugins.min.js', '<%= project.src_static_third_party %>/plugins.min.js.map'],
 						dest: '<%= project.dist_static_third_party %>/',
 						filter: 'isFile',
 						flatten: true
@@ -180,7 +158,7 @@ module.exports = function(grunt){
 					expand: true,
 					cwd: '<%= project.src_static_css %>',
 					src: ['*.css', '!*.min.css'],
-					dest: '<%= project.src_static_css %>',
+					dest: '<%= project.dist_static_css %>',
 					ext: '.min.css'
 				}]
 			}
@@ -199,7 +177,7 @@ module.exports = function(grunt){
 			},
 			dist: {
 				files: {
-					'<%= project.src %>/index.html': ['<%= project.src_jade %>/index.jade']
+					'<%= project.dist %>/index.html': ['<%= project.src_jade %>/index.jade']
 				}
 			}
 		},
@@ -309,9 +287,29 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-http-server');
 	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('dev', ['cssmin:dev', 'newer:uglify:dev', 'jade:dev', 'sass', 'newer:uglify:dev_third_party_angular', 'newer:uglify:dev_third_party', 'newer:copy:dev_fonts', 'concurrent:tasks']);
-	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['mkdir', 'jade:dist', 'cssmin:dist', 'copy:dist_css', 'copy:dist_html', 'copy:dist_js', 'copy:dist_img', 'copy:dist_fonts', 'processhtml:dist', 'http-server:dist']);
-	//grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 
+	grunt.registerTask('default', ['clean:dist']);
+
+	grunt.registerTask('dev', [
+		'cssmin:dev',
+		'newer:uglify:dev',
+		'jade:dev',
+		'sass',
+		'newer:uglify:dev_third_party_angular',
+		'newer:uglify:dev_third_party',
+		'newer:copy:dev_fonts',
+		'concurrent:tasks'
+	]);
+
+	grunt.registerTask('dist', [
+		'mkdir',
+		'jade:dist',
+		'cssmin:dist',
+		'copy:dist_js',
+		'copy:dist_img',
+		'copy:dist_fonts',
+		'processhtml:dist',
+		'http-server:dist'
+	]);
+	//grunt.registerTask('dist_page', ['dist', 'copy:dist_to_app', 'clean:dist' ]);
 };

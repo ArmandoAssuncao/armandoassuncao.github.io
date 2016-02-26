@@ -43,14 +43,14 @@
 	<!-- Chrome app -->
 	<link rel="manifest" href="static/img/logo/manifest.json?v=1">
 </head>
-  <body layout="column" ng-app="ArmandoAssuncao"><nav id="navbar">
+  <body layout="column" ng-app="ArmandoAssuncao"><!--<nav id="navbar">
 	<md-toolbar>
 		<div class="md-toolbar-tools container layout-row" layout="row">
 			<h1>Armando Assunção</h1>
 			<div flex class="flex"></div>
 		</div>
 	</md-toolbar>
-</nav>
+</nav>-->
 
 <main layout="column" flex="100">
 	<div layout="row" class="layout-row">
@@ -69,16 +69,13 @@
 	</div>
 </main>
 <footer layout="column" layout-align="center end">
-	<md-toolbar>
+	<md-toolbar class="my-toolbar">
 		<div class="container">
-			<div class="md-toolbar-tools" layout="row" layout-align="center center">
+			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-align="center center">
 				<div flex="20"></div>
 				<div id="btn_contact" flex="60" layout="row" layout-align="center center">
 					<h3>Contato</h3>
 				</div>
-				<!--<div flex="60" layout="row" layout-sm="column" layout-align="center" ng-controller="BottomSheetContactForm">
-					<md-button flex="30" class="md-primary md-raised" ng-click="showListBottomSheet()">Contato</md-button>
-				</div>-->
 				<ul id="social" flex="20" layout="row" layout-align="end center">
 					<li><i class="fa fa-facebook-square small"></i></li>
 					<li><i class="fa fa-github small"></i></li>
@@ -96,15 +93,15 @@
 					<div layout="row" layout-wrap layout-align="center center">
 						<div layout="row" layout-wrap flex='100' layout-align="center center">
 							<!-- Nome-->
-							<md-input-container flex="100" flex-gt-sm="45" class="md-icon-float md-primary hue-3">
-								<i class="material-icons prefix icon-large white-text">account_circle</i>
+							<md-input-container flex="100" flex-sm="45" flex-gt-sm="45" class="md-icon-float">
+								<i class="material-icons prefix icon-large white-texts">account_circle</i>
 								<label class="white-text">Nome</label>
 								<md-icon class="name"></md-icon>
 								<input id="form-name" name="name" type="text">
 							</md-input-container>
 							<span flex></span>
 							<!-- Email-->
-							<md-input-container flex="100" flex-gt-sm="50" class="md-icon-float">
+							<md-input-container flex="100" flex-sm="50" flex-gt-sm="50" class="md-icon-float">
 								<i class="material-icons prefix icon-large white-text">email</i>
 								<label class="white-text">Email</label>
 								<md-icon class="email"></md-icon>
@@ -125,7 +122,6 @@
 					</div>
 				</form>
 			</div>
-			<!-- Feedback removido -->
 		</div>
 	</div>
 </footer><script type="text/javascript" src="static/third_party/angular-bundle.min.js"></script>

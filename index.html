@@ -46,13 +46,14 @@
 	</md-toolbar>
 </nav>-->
 
-<main layout="column" flex="100">
-	<div layout="row" class="layout-row">
-		<div class="center-align">
+<main layout="column" flex="80" layout-align="center center">
+	<div layout="row" class="layout-row" layout-align="center center">
+		<div>
 			<img src="static/img/user.png" id="foto" class="circular">
 		</div>
 	</div>
-	<div layout="row" flex flex="50" id="description" class="center-align">
+	<h1 id="principal_name">Armando Assunção</h1>
+	<div layout="row" id="description" class="center-align">
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae volutpat ipsum,
 		sit amet ultricies ligula. Nullam felis magna, mattis quis tempus eget, ullamcorper quis nunc.
@@ -62,7 +63,7 @@
 		</p>
 	</div>
 </main>
-<footer layout="column" layout-align="center end">
+<div flex="20"></div><footer layout="column" layout-align="center end" ng-cloak>
 	<md-toolbar class="my-toolbar">
 		<div class="container">
 			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-align="center center">

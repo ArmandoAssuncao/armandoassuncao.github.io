@@ -13,6 +13,7 @@ nav {
 footer {
 	//background-color: $secondaryColor;
 	bottom: 0;
+	z-index: 1000;
 
 	#container_contact_form {
 		position: fixed;

@@ -4,7 +4,8 @@ body {
   font-family: "Source Sans Pro", Roboto, Helvetica; }
 
 footer {
-  bottom: 0; }
+  bottom: 0;
+  z-index: 1000; }
   footer #container_contact_form {
     position: fixed;
     width: 100%;

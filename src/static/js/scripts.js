@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('#btn_contact').one('click', showHideContactForm);
+	$('#btn_skills').one('click', showHideSkills);
 });
 
 
@@ -7,10 +8,11 @@ $(document).ready(function(){
 
 function showHideContactForm(){
 	var element = this;
+	var container = '#container_contact_form';
 	function show(){
 		$('footer').css('position', 'relative').fadeTo(0, 0.8);
-		$('footer').animate({bottom: $('#container_contact_form').css('height')}, 700, 'linear');
-		$('#container_contact_form').css('position', 'absolute');
+		$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
+		$(container).css('position', 'absolute');
 		darkenPage(true);
 
 		$(element).one('click', hide);
@@ -18,14 +20,38 @@ function showHideContactForm(){
 
 	function hide(){
 		$('footer').animate({bottom: '0'}, 700, 'linear', function(){
-			$('#container_contact_form').css('position', 'fixed')
+			$(container).css('position', 'fixed')
 		}).fadeTo('fast', 1);
 		darkenPage(false);
 
 		$(element).one('click', show);
 	}
 
-   show();
+	show();
+}
+
+function showHideSkills(){
+	var element = this;
+	var container = '#container_skills';
+	function show(){
+		$('footer').css('position', 'relative').fadeTo(0, 0.8);
+		$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
+		$(container).css('position', 'absolute');
+		darkenPage(true);
+
+		$(element).one('click', hide);
+	}
+
+	function hide(){
+		$('footer').animate({bottom: '0'}, 700, 'linear', function(){
+			$(container).css('position', 'fixed')
+		}).fadeTo('fast', 1);
+		darkenPage(false);
+
+		$(element).one('click', show);
+	}
+
+	show();
 }
 
 // Helpers ////////

@@ -46,8 +46,8 @@
 	</md-toolbar>
 </nav>-->
 
-<main layout="column" flex="80" layout-align="center center">
-	<div layout="row" class="layout-row" layout-align="center center">
+<main layout="column" flex="90" layout-align="center center">
+	<div layout="row" layout-align="center center">
 		<div>
 			<img src="static/img/user.png" id="foto" class="circular">
 		</div>
@@ -62,8 +62,31 @@
 		Curabitur iaculis ultricies nunc a ornare. Sed lacinia id nisl quis tincidunt.
 		</p>
 	</div>
+	<ul id="social" layout="row" layout-align="center center">
+		<li layout="column">
+			<i class="fa fa-facebook-square medium"></i>
+			<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
+		</li>
+		<li layout="column">
+			<i class="fa fa-github medium"></i>
+			<span class="fa-github-text" hide show-gt-xs> Github</span>
+		</li>
+		<li layout="column">
+			<i class="fa fa-linkedin-square medium"></i>
+			<span class="fa-github-text" hide show-gt-xs> LinkedIn</span>
+		</li>
+		<li layout="column">
+			<i class="fa fa-angellist medium"></i>
+			<span class="fa-github-text" hide show-gt-xs> AngelList</span>
+		</li>
+		<li layout="column">
+			<i class="fa fa-file-pdf-o medium"></i>
+			<span class="fa-github-text" hide show-gt-xs> Curriculo</span>
+		</li>
+		
+	</ul>
 </main>
-<div flex="20"></div><footer layout="column" layout-align="center end" ng-cloak>
+<div flex="10"></div><footer layout="column" layout-align="center end" ng-cloak>
 	<md-toolbar class="my-toolbar">
 		<div class="container">
 			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-align="center center">
@@ -71,15 +94,10 @@
 				<div id="btn_contact" flex="60" layout="row" layout-align="center center">
 					<h3>Contato</h3>
 				</div>
-				<div id="btn_skills" flex="10" layout="row" layout-align="center center">
+				<div id="btn_skills" flex="20" layout="row" layout-align="center center">
 					<h3>Habilidades</h3>
 				</div>
-				<ul id="social" flex="20" layout="row" layout-align="end center">
-					<li><i class="fa fa-facebook-square small"></i></li>
-					<li><i class="fa fa-github small"></i></li>
-					<li><i class="fa fa-linkedin-square small"></i></li>
-					<li><i class="fa fa-angellist small"></i></li>
-				</ul>
+				
 			</div>
 		</div>
 	</md-toolbar>

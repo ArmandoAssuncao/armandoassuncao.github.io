@@ -41,10 +41,19 @@ main {
   width: 150px;
   height: 150px; }
 
-#social li {
-  margin-right: 13px; }
-  #social li .small {
-    font-size: 1.5em; }
+#social {
+  margin-top: 40px; }
+  #social li {
+    text-align: center;
+    margin-right: 20px; }
+    #social li span {
+      font-size: 16px; }
+    #social li:last-child {
+      margin-right: 0; }
+    #social li .small {
+      font-size: 1.5em; }
+    #social li .medium {
+      font-size: 2.2em; }
 
 .skill {
   padding: 10px 30px; }

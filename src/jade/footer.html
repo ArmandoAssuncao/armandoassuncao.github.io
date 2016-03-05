@@ -3,18 +3,18 @@
 		<div class="container">
 			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-align="center center">
 				<div flex="20"></div>
-				<div id="btn_contact" flex="60" layout="row" layout-align="center center">
-					<h3>Contato</h3>
+				<div flex="60" layout="row" layout-align="center center">
+					<h3 class="title" id="btn_contact">Contato</h3>
 				</div>
 				<div id="btn_skills" flex="20" layout="row" layout-align="center center">
-					<h3>Habilidades</h3>
+					<h3 class="title">Habilidades</h3>
 				</div>
 				
 			</div>
 		</div>
 	</md-toolbar>
 
-	<div id="container_contact_form">
+	<div id="contact_form" class="container-footer">
 		<div class="container">
 			<div layout="row" layout-wrap layout-align="center">
 				<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-sm="100" flex-md="70" flex-gt-md="70">
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 
-	<div id="container_skills" ng-controller="SkillsController">
+	<div id="skills" class="container-footer" ng-controller="SkillsController">
 		<div class="container">
 			<div layout="row" layout-wrap layout-align="center center">
 				<div class="skill" flex="30" ng-repeat="skill in skills.data  | orderBy:sortType">

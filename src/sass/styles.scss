@@ -16,22 +16,25 @@ footer {
 	bottom: 0;
 	z-index: 1000;
 
-	#container_contact_form {
-		position: fixed;
-		//height: 300px;
-		width: 100%;
-		background-color: lighten(black, 10%);
+	.title {
+		font-size: 22px;
+		font-weight: 400;
+		cursor: pointer;
+
+		:hover {
+			color: blue;
+		}
 	}
 
-	#container_skills {
+	.container-footer {
 		position: fixed;
+		height: 300px;
 		width: 100%;
 		background-color: lighten(black, 10%);
 	}
 }
 
 main {
-	padding: 20px 0;
 }
 
 .container {
@@ -67,15 +70,13 @@ main {
 
 	li {
 		text-align: center;
-		margin-right: 20px;
+		vertical-align: middle;
+		height: 70px;
+		width: 70px;
+		margin: 0 10px;
 
 		span {
 			font-size: 16px;
-			//display: none;
-		}
-
-		&:last-child {
-			margin-right: 0;
 		}
 
 		.small {

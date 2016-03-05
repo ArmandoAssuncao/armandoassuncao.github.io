@@ -1,57 +1,59 @@
 $(document).ready(function(){
-	$('#btn_contact').one('click', showHideContactForm);
-	$('#btn_skills').one('click', showHideSkills);
+	$('#btn_contact').on('click', showHideFooter);
+	$('#btn_skills').on('click', showHideFooter);
 });
 
 
 // Functions ////////
-
-function showHideContactForm(){
+function showHideFooter(){
 	var element = this;
-	var container = '#container_contact_form';
-	function show(){
-		$('footer').css('position', 'relative').fadeTo(0, 0.8);
-		$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
-		$(container).css('position', 'absolute');
-		darkenPage(true);
+	var container = '.container-footer';
 
-		$(element).one('click', hide);
+	if(! $(element).hasClass('hideContent')){
+		show();
+		$('#btn_contact').removeClass('hideContent');
+		$('#btn_skills').removeClass('hideContent');
+		$(element).addClass('hideContent');
+	}
+	else{
+		hide();
+		$('#btn_contact').removeClass('hideContent');
+		$('#btn_skills').removeClass('hideContent');
+	}
+
+	function show(){
+		if(! $('footer').hasClass('showing')){
+			$('footer').css('position', 'relative').fadeTo(0, 0.8);
+			$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
+			darkenPage(true);
+		}
+		$('footer').addClass('showing');
+
+		contentFooter(element.id);
 	}
 
 	function hide(){
 		$('footer').animate({bottom: '0'}, 700, 'linear', function(){
-			$(container).css('position', 'fixed')
 		}).fadeTo('fast', 1);
 		darkenPage(false);
 
-		$(element).one('click', show);
+		$('footer').removeClass('showing');
 	}
-
-	show();
 }
 
-function showHideSkills(){
-	var element = this;
-	var container = '#container_skills';
-	function show(){
-		$('footer').css('position', 'relative').fadeTo(0, 0.8);
-		$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
-		$(container).css('position', 'absolute');
-		darkenPage(true);
+function contentFooter(btnID){
+	var contact = 'btn_contact';
+	var skills = 'btn_skills';
 
-		$(element).one('click', hide);
-	}
+	$('#contact_form').css('position', 'fixed');
+	$('#skills').css('position', 'fixed');
 
-	function hide(){
-		$('footer').animate({bottom: '0'}, 700, 'linear', function(){
-			$(container).css('position', 'fixed')
-		}).fadeTo('fast', 1);
-		darkenPage(false);
+	if(btnID == contact)
+		$('#contact_form').css('position', 'absolute');
+	else if(btnID == skills)
+		$('#skills').css('position', 'absolute');
 
-		$(element).one('click', show);
-	}
 
-	show();
 }
 
 // Helpers ////////

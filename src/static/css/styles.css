@@ -7,17 +7,17 @@ body {
 footer {
   bottom: 0;
   z-index: 1000; }
-  footer #container_contact_form {
+  footer .title {
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer; }
+    footer .title :hover {
+      color: blue; }
+  footer .container-footer {
     position: fixed;
+    height: 300px;
     width: 100%;
     background-color: #1a1a1a; }
-  footer #container_skills {
-    position: fixed;
-    width: 100%;
-    background-color: #1a1a1a; }
-
-main {
-  padding: 20px 0; }
 
 .container {
   margin: 0 auto;
@@ -45,11 +45,12 @@ main {
   margin-top: 40px; }
   #social li {
     text-align: center;
-    margin-right: 20px; }
+    vertical-align: middle;
+    height: 70px;
+    width: 70px;
+    margin: 0 10px; }
     #social li span {
       font-size: 16px; }
-    #social li:last-child {
-      margin-right: 0; }
     #social li .small {
       font-size: 1.5em; }
     #social li .medium {

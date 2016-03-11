@@ -15,15 +15,14 @@ footer {
 	//background-color: $secondaryColor;
 	bottom: 0;
 	z-index: 1000;
+	box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
 
 	.title {
 		font-size: 22px;
 		font-weight: 400;
 		cursor: pointer;
-
-		:hover {
-			color: blue;
-		}
+		border-bottom: 1px solid;
+		color: black;
 	}
 
 	.container-footer {
@@ -109,7 +108,7 @@ main {
 
 		.skill12 {
 			height: inherit;
-			background-color: #FF9800;
+			background-color: $secondaryColor;
 		}
 	}
 }

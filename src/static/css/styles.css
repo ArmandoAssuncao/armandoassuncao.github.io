@@ -6,13 +6,14 @@ body {
 
 footer {
   bottom: 0;
-  z-index: 1000; }
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(20, 20, 20, 0.8); }
   footer .title {
     font-size: 22px;
     font-weight: 400;
-    cursor: pointer; }
-    footer .title :hover {
-      color: blue; }
+    cursor: pointer;
+    border-bottom: 1px solid;
+    color: black; }
   footer .container-footer {
     position: fixed;
     height: 300px;

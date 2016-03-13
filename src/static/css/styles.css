@@ -5,6 +5,8 @@ body {
   overflow: hidden; }
 
 footer {
+  position: fixed;
+  width: 100%;
   bottom: 0;
   z-index: 1000;
   box-shadow: 0 0 15px rgba(20, 20, 20, 0.8); }
@@ -24,7 +26,7 @@ footer {
   margin: 0 auto;
   width: 85%; }
 
-#principal_name {
+#my_name {
   font-size: 42px;
   letter-spacing: 3px;
   text-transform: capitalize;
@@ -33,7 +35,7 @@ footer {
 
 #description {
   margin-top: 20px;
-  width: 50%;
+  width: 65%;
   text-transform: capitalize;
   text-align: justify;
   letter-spacing: 2px; }
@@ -105,5 +107,33 @@ footer {
 
 .white-text {
   color: white; }
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */ }
+@media (max-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */ }
+@media (max-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (max-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .container {
+    width: 90%; }
+
+  #my_name {
+    font-size: 32px; } }
+@media (max-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .container {
+    width: 95%; }
+
+  #my_name {
+    font-size: 26px; } }
+@media (max-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .container {
+    width: 100%; }
+
+  #my_name {
+    font-size: 22px; } }
 
 /*# sourceMappingURL=styles.css.map */

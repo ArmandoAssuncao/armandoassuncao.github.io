@@ -1,0 +1,40 @@
+@media (min-width:1281px) {
+
+}
+
+@media (max-width:1025px) {
+
+}
+
+@media (max-width:961px) {
+
+}
+
+@media (max-width:641px) {
+	.container {
+		width: 90%;
+	}
+	#my_name {
+		font-size: 32px;
+	}
+}
+
+@media (max-width:481px) {
+	.container {
+		width: 95%;
+	}
+
+	#my_name {
+		font-size: 26px;
+	}
+}
+
+@media (max-width:320px) {
+	.container {
+		width: 100%;
+	}
+
+	#my_name {
+		font-size: 22px;
+	}
+}

@@ -12,7 +12,8 @@ nav {
 }
 
 footer {
-	//background-color: $secondaryColor;
+	position: fixed;
+	width: 100%;
 	bottom: 0;
 	z-index: 1000;
 	box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
@@ -41,7 +42,7 @@ main {
 	width: 85%;
 }
 
-#principal_name {
+#my_name {
 	font-size: 42px;
 	//font-weight: 600;
 	letter-spacing: 3px;
@@ -53,7 +54,7 @@ main {
 
 #description {
 	margin-top: 20px;
-	width: 50%;
+	width: 65%;
 	text-transform: capitalize;
 	text-align: justify;
 	letter-spacing: 2px;
@@ -158,3 +159,5 @@ main {
 .white-text {
 	color: white;
 }
+
+@import "media";

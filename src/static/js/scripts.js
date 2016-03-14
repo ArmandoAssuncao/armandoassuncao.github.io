@@ -22,8 +22,7 @@ function showHideFooter(){
 		$(element).addClass('hideContent');
 
 		if(! $('footer').hasClass('showing')){
-			$('footer').css('position', 'relative').fadeTo(0, 0.8);
-			$('footer').animate({bottom: $(container).css('height')}, 700, 'linear');
+			$('footer').fadeTo(0, 0.95).animate({bottom: $(container).css('height')}, 700, 'linear');
 			darkenPage(true);
 
 			$('body').on('click', function( event ) {
@@ -54,13 +53,13 @@ function contentFooter(btnID){
 	var contact = 'btn_contact';
 	var skills = 'btn_skills';
 
-	$('#contact_form').css('position', 'fixed');
-	$('#skills').css('position', 'fixed');
+	$('#contact_form').css('display', '');
+	$('#skills').css('display', '');
 
 	if(btnID == contact)
-		$('#contact_form').css('position', 'absolute');
+		$('#contact_form').css('display', 'inline');
 	else if(btnID == skills)
-		$('#skills').css('position', 'absolute');
+		$('#skills').css('display', 'inline');
 
 
 }

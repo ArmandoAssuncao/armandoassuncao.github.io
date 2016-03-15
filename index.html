@@ -46,15 +46,13 @@
 	</md-toolbar>
 </nav>-->
 
-<main layout="column" flex="80" layout-align="center center">
+<main layout="column" flex="80" flex-xs="100" flex-sm="100" layout-align="center center">
 	<div class="container" layout="column" flex="100" layout-align="center center">
-		<div layout="row" layout-align="center center">
-			<div>
-				<img src="static/img/user.png" id="foto" class="circular">
-			</div>
+		<div>
+			<img src="static/img/user.png" id="foto" class="circular">
 		</div>
 		<h1 id="my_name">Armando Assunção</h1>
-		<div layout="row" id="description" class="center-align">
+		<div id="description" class="center-align">
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae volutpat ipsum,
 			sit amet ultricies ligula. Nullam felis magna, mattis quis tempus eget, ullamcorper quis nunc.
@@ -65,12 +63,16 @@
 		</div>
 		<ul id="social" layout="row" layout-align="center center">
 			<li>
-				<i class="fa fa-facebook-square medium"></i>
-				<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
+				<a href="https://www.facebook.com/armando.455" class="white-text">
+					<i class="fa fa-facebook-square medium"></i>
+					<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
+				</a>
 			</li>
 			<li>
-				<i class="fa fa-github medium"></i>
-				<span class="fa-github-text" hide show-gt-xs> Github</span>
+				<a href="https://github.com/ArmandoAssuncao" class="white-text">
+					<i class="fa fa-github medium"></i>
+					<span class="fa-github-text" hide show-gt-xs> Github</span>
+				</a>
 			</li>
 			<li>
 				<i class="fa fa-linkedin-square medium"></i>
@@ -84,11 +86,9 @@
 				<i class="fa fa-file-pdf-o medium"></i>
 				<span class="fa-github-text" hide show-gt-xs> Curriculo</span>
 			</li>
-			
 		</ul>
 	</div>
-</main>
-<div flex="20"></div><footer layout="column" layout-align="center end" ng-cloak>
+</main><footer layout="column" layout-align="center end" ng-cloak>
 	<md-toolbar class="my-toolbar">
 		<div class="container">
 			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-wrap layout-align="center center">
@@ -107,7 +107,7 @@
 	<div id="contact_form" class="container-footer">
 		<div class="container">
 			<div layout="row" layout-wrap layout-align="center">
-				<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-sm="100" flex-md="70" flex-gt-md="70">
+				<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-xs="95" flex-sm="95" flex-md="70" flex-gt-md="70">
 					<div layout="row" layout-wrap layout-align="center center">
 						<div layout="row" layout-wrap flex='100' layout-align="center center">
 							<!-- Nome-->

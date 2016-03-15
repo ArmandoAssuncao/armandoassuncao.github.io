@@ -7,10 +7,6 @@ body {
 	//overflow: hidden;
 }
 
-nav {
-	//background-color: $secondaryColor;
-}
-
 footer {
 	position: fixed;
 	width: 100%;
@@ -38,7 +34,6 @@ footer {
 }
 
 main {
-	min-height: 500px;
 	margin-bottom: 45px;
 }
 
@@ -53,6 +48,7 @@ main {
 	letter-spacing: 3px;
 	text-transform: capitalize;
 	text-transform: uppercase;
+	white-space: nowrap;
 	
 	margin: 10px 0;
 }
@@ -125,6 +121,10 @@ main {
 	.my-toolbar-tools {
 		height: 42px;
 	}
+}
+
+a:hover, a:visited, a:link, a:active {
+	text-decoration: none;
 }
 
 

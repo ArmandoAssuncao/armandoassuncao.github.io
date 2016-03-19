@@ -1,7 +1,8 @@
 body {
   background-color: #252525;
   color: white;
-  font-family: "Source Sans Pro", Roboto, Helvetica; }
+  font-family: "Source Sans Pro", Roboto, Helvetica;
+  height: auto; }
 
 footer {
   position: fixed;
@@ -52,7 +53,6 @@ main {
   margin-top: 20px; }
 
 #social {
-  min-height: 70px;
   margin-top: 40px; }
   #social li {
     text-align: center;
@@ -142,12 +142,13 @@ a:hover, a:visited, a:link, a:active {
   #my_name {
     font-size: 26px; }
 
-  #social li {
-    margin: 0;
-    width: 60px; } }
+  #social {
+    margin-top: 15px; }
+    #social li {
+      margin: 0;
+      width: 60px; } }
 @media (max-width: 320px) {
   body {
-    height: auto;
     min-width: 250px; }
 
   .container {

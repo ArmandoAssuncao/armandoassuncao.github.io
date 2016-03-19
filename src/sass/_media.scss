@@ -41,6 +41,8 @@
 	}
 
 	#social {
+		margin-top: 15px;
+
 		li {
 			margin: 0;
 			width: 60px;
@@ -50,7 +52,6 @@
 
 @media (max-width:320px) {
 	body {
-		height: auto;
 		min-width: 250px;
 	}
 

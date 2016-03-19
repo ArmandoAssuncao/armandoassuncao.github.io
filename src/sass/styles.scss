@@ -4,7 +4,7 @@ body {
 	background-color: $primaryColor;
 	color: $fontColor;
 	font-family: "Source Sans Pro", Roboto, Helvetica;
-	//overflow: hidden;
+	height: auto;
 }
 
 footer {
@@ -69,7 +69,6 @@ main {
 }
 
 #social {
-	min-height: 70px;
 	margin-top: 40px;
 
 	li {
@@ -95,7 +94,7 @@ main {
 
 #skills {
 	min-width: 250px;
-	
+
 	.skill {
 		padding: 10px 30px;
 

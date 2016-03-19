@@ -59,20 +59,23 @@ main {
 	text-transform: capitalize;
 	text-align: justify;
 	letter-spacing: 2px;
+	//overflow: auto;
 }
 
 #foto{
 	width: 150px;
 	height: 150px;
+	margin-top: 20px;
 }
 
 #social {
+	min-height: 70px;
 	margin-top: 40px;
 
 	li {
 		text-align: center;
 		vertical-align: middle;
-		height: 70px;
+		//height: 70px;
 		width: 70px;
 		margin: 0 10px;
 
@@ -90,27 +93,31 @@ main {
 	}
 }
 
-.skill {
-	padding: 10px 30px;
+#skills {
+	min-width: 250px;
+	
+	.skill {
+		padding: 10px 30px;
 
-	.skill-name {
-		text-transform: capitalize;
-	}
+		.skill-name {
+			text-transform: capitalize;
+		}
 
-	.skill-level {
-		float: right;
-		text-transform: capitalize;
-	}
+		.skill-level {
+			float: right;
+			text-transform: capitalize;
+		}
 
-	.skill-bar {
-		background-color: gray;
-		width: 100%;
-		height: 8px;
-		margin-top: 5px;
+		.skill-bar {
+			background-color: gray;
+			width: 100%;
+			height: 8px;
+			margin-top: 5px;
 
-		.skill12 {
-			height: inherit;
-			background-color: $secondaryColor;
+			.skill12 {
+				height: inherit;
+				background-color: $secondaryColor;
+			}
 		}
 	}
 }

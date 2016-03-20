@@ -27,6 +27,10 @@ function bottomSheet(){
 
 		switchContent();
 		darkenPage(true);
+
+		$('#darken_page').one('click', function(){
+			hide();
+		});
 	}
 
 	function hide(){

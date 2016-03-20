@@ -10,7 +10,7 @@ body {
 footer {
 	position: fixed;
 	width: 100%;
-	min-width: 500px;
+	min-width: 250px;
 	bottom: 0;
 	z-index: 1000;
 	box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
@@ -22,15 +22,17 @@ footer {
 		border-bottom: 1px solid;
 		color: black;
 	}
+}
 
-	.container-footer {
-		display: none;
-		position: fixed;
-		height: 305px;
-		width: 100%;
-		background-color: lighten(black, 10%);
-		overflow: auto;
-	}
+.container-bottomsheet {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: lighten(black, 10%);
+	overflow: auto;
 }
 
 main {

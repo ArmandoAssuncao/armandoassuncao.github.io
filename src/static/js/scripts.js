@@ -1,68 +1,66 @@
 $(document).ready(function(){
-	$('#btn_contact').on('click', showHideFooter);
-	$('#btn_skills').on('click', showHideFooter);
+	$('#btn_contact').on('click', bottomSheet);
+	$('#btn_skills').on('click', bottomSheet);
 });
 
-
-// Functions ////////
-function showHideFooter(){
+function bottomSheet(){
 	var element = this;
-	var container = '.container-footer';
+	var container = '.container-bottomsheet';
 
-	if(! $(element).hasClass('hideContent')){
-		show();
-	}
-	else{
+	if($('footer').hasClass('showing') && $(element).hasClass('hideContent')){
 		hide();
+	}
+	else if($('footer').hasClass('showing')){
+		switchContent();
+	}
+	else {
+		show();
 	}
 
 	function show(){
-		$('#btn_contact').removeClass('hideContent');
-		$('#btn_skills').removeClass('hideContent');
-		$(element).addClass('hideContent');
-
-		if(! $('footer').hasClass('showing')){
-			$('footer').fadeTo(0, 0.95).animate({bottom: $(container).css('height')}, 700, 'linear');
-			darkenPage(true);
-
-			$('body').on('click', function( event ) {
-				if(! $('footer').has(event.target).length) {
-					hide();
-				}
-			});
-		}
 		$('footer').addClass('showing');
 
-		contentFooter(element.id);
+		$('footer').fadeTo(0, 0.95).animate({bottom: 305}, 700, 'linear');
+
+		$('#contact_form').animate({height: 305}, 700, 'linear');
+		$('#skills').animate({height: 305}, 700, 'linear');
+
+		switchContent();
+		darkenPage(true);
 	}
 
 	function hide(){
-		$('#btn_contact').removeClass('hideContent');
-		$('#btn_skills').removeClass('hideContent');
-
 		$('footer').removeClass('showing');
-		$('body').unbind('click');
+		$(element).removeClass('hideContent');
 
-		$('footer').animate({bottom: '0'}, 700, 'linear', function(){
-		}).fadeTo('fast', 1);
+		$('footer').fadeTo(0, 0.95).animate({bottom: 0}, 700, 'linear');
+
+		$('#contact_form').animate({height: 0}, 700, 'linear');
+		$('#skills').animate({height: 0}, 700, 'linear');
+
 		darkenPage(false);
+	}
+
+	function switchContent(){
+		var contact = '#btn_contact';
+		var skills = '#btn_skills';
+		var btnID = '#' + element.id;
+
+		$(contact).removeClass('hideContent');
+		$(skills).removeClass('hideContent');
+
+		$(element).addClass('hideContent');
+
+		$('#contact_form').css('display', '');
+		$('#skills').css('display', '');
+
+		if(btnID == contact)
+			$('#contact_form').css('display', 'inline');
+		else if(btnID == skills)
+			$('#skills').css('display', 'inline');
 	}
 }
 
-function contentFooter(btnID){
-	var contact = 'btn_contact';
-	var skills = 'btn_skills';
-
-	$('#contact_form').css('display', '');
-	$('#skills').css('display', '');
-
-	if(btnID == contact)
-		$('#contact_form').css('display', 'inline');
-	else if(btnID == skills)
-		$('#skills').css('display', 'inline');
-
-
-}
 
 // Helpers ////////
 
@@ -74,7 +72,7 @@ function darkenPage(show){
 			,height: '100%'
 			,'background-color': '#000'
 			,opacity: 0.6
-			,'z-index': 999
+			,'z-index': 998
 			,top: 0
 			,left: 0
 		}).attr('id','darken_page').fadeTo(500, 0.6));

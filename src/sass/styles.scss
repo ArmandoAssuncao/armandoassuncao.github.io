@@ -32,7 +32,10 @@ footer {
 	width: 100%;
 	z-index: 999;
 	background-color: lighten(black, 10%);
-	overflow: auto;
+
+	& > .container {
+		overflow: auto;
+	}
 }
 
 main {

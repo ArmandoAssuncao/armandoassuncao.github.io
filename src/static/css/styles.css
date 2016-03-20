@@ -25,8 +25,9 @@ footer {
   height: 0;
   width: 100%;
   z-index: 999;
-  background-color: #1a1a1a;
-  overflow: auto; }
+  background-color: #1a1a1a; }
+  .container-bottomsheet > .container {
+    overflow: auto; }
 
 main {
   margin-bottom: 45px; }
@@ -126,7 +127,7 @@ a:hover, a:visited, a:link, a:active {
 @media (max-width: 961px) {
   .container {
     width: 95%; } }
-@media (max-width: 641px) {
+@media (max-width: 600px) {
   .container {
     width: 95%; }
 
@@ -134,7 +135,21 @@ a:hover, a:visited, a:link, a:active {
     font-size: 32px; }
 
   #social li {
-    margin: 0 5px; } }
+    margin: 0 5px; }
+
+  footer {
+    position: initial; }
+
+  .container-bottomsheet {
+    position: initial;
+    height: auto;
+    display: initial; }
+    .container-bottomsheet#skills > .container {
+      height: 100px;
+      overflow: hidden; }
+    .container-bottomsheet#skills > .container-showmore {
+      height: 50px;
+      margin: 20px 0 40px; } }
 @media (max-width: 481px) {
   .container {
     width: 95%; }

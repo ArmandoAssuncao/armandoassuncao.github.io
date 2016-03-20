@@ -1,24 +1,16 @@
-<footer layout="column" layout-align="center end" ng-cloak>
-	<md-toolbar class="my-toolbar">
+<div id="skills" class="container-bottomsheet" ng-controller="SkillsController">
+	<md-toolbar class="my-toolbar" hide show-xs>
 		<div class="container">
 			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-wrap layout-align="center center">
-				<div flex="20"></div>
-				<div flex="60" flex-xs="100" layout="row" layout-align="center center">
-					<h3 class="title" id="btn_contact">Contato</h3>
+				<div flex="100" flex-xs="100" layout="row" layout-align="center center">
+					<h3 class="title">Habilidades</h3>
 				</div>
-				<div flex="20" flex-xs="100" layout="row" layout-align="center center">
-					<h3 class="title" id="btn_skills">Habilidades</h3>
-				</div>
-				
 			</div>
 		</div>
 	</md-toolbar>
-</footer>
-
-<div id="skills" class="container-bottomsheet" ng-controller="SkillsController">
 	<div class="container">
 		<div layout="row" layout-align="center" flex="100" flex-sm="100" flex-md="100" flex-gt-md="100">
-			<div layout="row" layout-wrap layout-align="center center" flex="100">
+			<div layout="row" layout-wrap layout-align="center" flex="100">
 				<div class="skill" flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="30" ng-repeat="skill in skills.data  | orderBy:sortType">
 					<skill
 						name="{{skill.name}}"
@@ -28,9 +20,23 @@
 			</div>
 		</div>
 	</div>
+	<div class="container-showmore" hide show-xs flex="100" flex-xs="100" layout="row" layout-align="center center">
+		<button class="md-fab md-mini md-primary md-button md-ink-ripple" type="button" ng-transclude="" id="btn-skill-more" aria-label="Use Android">
+            <md-icon class="ng-scope ng-isolate-scope material-icons"><i class="material-icons">add</i></md-icon>
+          <div class="md-ripple-container"></div></button>
+	</div>
 </div>
 
 <div id="contact_form" class="container-bottomsheet">
+	<md-toolbar class="my-toolbar" hide show-xs>
+		<div class="container">
+			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-wrap layout-align="center center">
+				<div flex="100" flex-xs="100" layout="row" layout-align="center center">
+					<h3 class="title">Contato</h3>
+				</div>
+			</div>
+		</div>
+	</md-toolbar>
 	<div class="container">
 		<div layout="row" layout-wrap layout-align="center">
 			<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-xs="95" flex-sm="95" flex-md="70" flex-gt-md="70">
@@ -68,3 +74,20 @@
 		</div>
 	</div>
 </div>
+
+<footer layout="column" layout-align="center end" hide-xs ng-cloak>
+	<md-toolbar class="my-toolbar">
+		<div class="container">
+			<div class="md-toolbar-tools my-toolbar-tools" layout="row" layout-wrap layout-align="center center">
+				<div flex="20"></div>
+				<div flex="60" flex-xs="100" layout="row" layout-align="center center">
+					<h3 class="title" id="btn_contact">Contato</h3>
+				</div>
+				<div flex="20" flex-xs="100" layout="row" layout-align="center center">
+					<h3 class="title" id="btn_skills">Habilidades</h3>
+				</div>
+				
+			</div>
+		</div>
+	</md-toolbar>
+</footer>

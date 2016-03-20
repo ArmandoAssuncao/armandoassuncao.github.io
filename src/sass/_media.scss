@@ -12,7 +12,7 @@
 	}
 }
 
-@media (max-width:641px) {
+@media (max-width:600px) {
 	.container {
 		width: 95%;
 	}
@@ -23,6 +23,28 @@
 	#social {
 		li {
 			margin: 0 5px;
+		}
+	}
+
+	footer {
+		position: initial;
+	}
+
+	.container-bottomsheet {
+		position: initial;
+		height: auto;
+		display: initial;
+
+		&#skills {
+			> .container {
+				height: 100px;
+				overflow: hidden;
+			}
+
+			> .container-showmore {
+				height: 50px;
+				margin: 20px 0 40px;
+			}
 		}
 	}
 }

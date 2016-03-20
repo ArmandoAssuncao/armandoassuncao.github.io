@@ -28,6 +28,8 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-processhtml": "~0.3.11",
     "grunt-http-server": "~1.14.0",
-    "grunt-concurrent": "~2.2.1"
+    "grunt-concurrent": "~2.2.1",
+    "grunt-postcss": "=0.7.2",
+    "autoprefixer": "~6.3.3"
   }
 }

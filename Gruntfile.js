@@ -49,13 +49,13 @@ module.exports = function(grunt){
 		'http-server': {
 			dev: {
 				root: '<%= project.src %>',
-            	port: 8081,
-            	host: "localhost",
+				port: 8081,
+				host: "localhost",
 			},
 			dist: {
 				root: '<%= project.dist %>',
-            	port: 8082,
-            	host: "localhost",
+				port: 8082,
+				host: "localhost",
 			}
 		},
 
@@ -196,6 +196,31 @@ module.exports = function(grunt){
 			},
 		},
 
+		postcss: {
+			options: {
+				// map: true,
+				processors: [
+					require('autoprefixer')({
+						// browsers: [
+						//   '> 5%',
+						//   '> 10% in BR',
+						//   'last 10 Chrome versions',
+						//   'last 7 Firefox versions',
+						//   'last 7 Opera versions',
+						//   'ie >= 10',
+						//   'Edge > 0',
+						//   'ie_mob >= 10',
+						//   'Safari >= 5',
+						//   ]
+						browsers: ['last 10 versions', 'ie >= 9']
+					}),
+				]
+			},
+			dist: {
+				src: ['<%= project.src_static_css %>/*.css', '!<%= project.src_static_css %>/*.min.css']
+			}
+		},
+
 
 		uglify: {
 			options: {
@@ -244,9 +269,21 @@ module.exports = function(grunt){
 		},
 
 		watch: {
+			options: {
+				interrupt: true,
+			},
 			scss: {
 				files: ['<%= project.src_sass %>/*.scss'],
 				tasks: ['sass'],
+			},
+			postcss: {
+				files: ['<%= project.src_static_css %>/*.css', '!<%= project.src_static_css %>/*.min.css'],
+				tasks: ['postcss'],
+				options: {
+					interval: 1000,
+					interrupt: true,
+					spawn: false
+				},
 			},
 			jade: {
 				files: ['<%= project.src_jade %>/index.jade', '<%= project.src_jade %>/*.html'],
@@ -286,6 +323,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-processhtml');
 	grunt.loadNpmTasks('grunt-http-server');
 	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.loadNpmTasks('grunt-postcss');
 
 
 	grunt.registerTask('default', ['clean:dist']);
@@ -294,7 +332,7 @@ module.exports = function(grunt){
 		'cssmin:dev',
 		'newer:uglify:dev',
 		'jade:dev',
-		'sass',
+		'newer:sass',
 		'newer:uglify:dev_third_party_angular',
 		'newer:uglify:dev_third_party',
 		'newer:copy:dev_fonts',
@@ -304,6 +342,7 @@ module.exports = function(grunt){
 	grunt.registerTask('dist', [
 		'mkdir',
 		'jade:dist',
+		'postcss:dist',
 		'cssmin:dist',
 		'copy:dist_js',
 		'copy:dist_img',

@@ -10,7 +10,8 @@ footer {
   min-width: 250px;
   bottom: 0;
   z-index: 1000;
-  box-shadow: 0 0 15px rgba(20, 20, 20, 0.8); }
+  -webkit-box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
+          box-shadow: 0 0 15px rgba(20, 20, 20, 0.8); }
   footer .title {
     font-size: 22px;
     font-weight: 400;
@@ -109,8 +110,10 @@ a:hover, a:visited, a:link, a:active {
 .circular {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   background-size: 100% 100%; }
 
 .prefix {
@@ -174,5 +177,3 @@ a:hover, a:visited, a:link, a:active {
 
   #my_name {
     font-size: 22px; } }
-
-/*# sourceMappingURL=styles.css.map */

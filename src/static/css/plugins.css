@@ -203,7 +203,8 @@ summary {
 .fa-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eee;
-  border-radius: .1em; }
+  -webkit-border-radius: .1em;
+          border-radius: .1em; }
 
 .fa-pull-left {
   float: left; }
@@ -285,7 +286,8 @@ summary {
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  filter: none; }
+  -webkit-filter: none;
+          filter: none; }
 
 .fa-stack {
   position: relative;
@@ -2215,5 +2217,3 @@ summary {
 
 .fa-percent:before {
   content: ""; }
-
-/*# sourceMappingURL=plugins.css.map */

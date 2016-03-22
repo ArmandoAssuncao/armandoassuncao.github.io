@@ -36,14 +36,16 @@
 		display: initial;
 
 		&#skills {
+			padding-bottom: 30px;
+
 			> .container {
 				height: 100px;
 				overflow: hidden;
 			}
 
-			> .container-showmore {
+			> #container-showmore {
 				height: 50px;
-				margin: 20px 0 40px;
+				margin: 10px 0;
 			}
 		}
 	}

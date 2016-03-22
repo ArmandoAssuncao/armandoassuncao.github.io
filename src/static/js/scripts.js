@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#btn_contact').on('click', bottomSheet);
 	$('#btn_skills').on('click', bottomSheet);
+	$('#btn_moreskills').on('click', showMoreSkills);
 });
 
 function bottomSheet(){
@@ -65,6 +66,18 @@ function bottomSheet(){
 	}
 }
 
+
+function showMoreSkills(){
+	//animate height to value auto
+	$('#skills > .container').animate({height: $('#skills > .container').get(0).scrollHeight}, 700, 'linear', function(){
+		$('#container-showmore').fadeTo(400, 0, function(){
+			$('#container-showmore').animate({height: 0, margin: 0}, 400, 'linear', function(){
+				this.remove();
+			})
+		});
+	});
+
+}
 
 // Helpers ////////
 

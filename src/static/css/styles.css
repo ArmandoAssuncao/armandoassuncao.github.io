@@ -147,12 +147,14 @@ a:hover, a:visited, a:link, a:active {
     position: initial;
     height: auto;
     display: initial; }
-    .container-bottomsheet#skills > .container {
-      height: 100px;
-      overflow: hidden; }
-    .container-bottomsheet#skills > .container-showmore {
-      height: 50px;
-      margin: 20px 0 40px; } }
+    .container-bottomsheet#skills {
+      padding-bottom: 30px; }
+      .container-bottomsheet#skills > .container {
+        height: 100px;
+        overflow: hidden; }
+      .container-bottomsheet#skills > #container-showmore {
+        height: 50px;
+        margin: 10px 0; } }
 @media (max-width: 481px) {
   .container {
     width: 95%; }

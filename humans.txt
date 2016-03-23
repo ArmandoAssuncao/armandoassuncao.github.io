@@ -1,7 +1,7 @@
 /* TEAM */
 	Developer: Armando Assuncao
 	Github: https://github.com/armandoassuncao
-	Website: http://armandoassuncao.github.io
+	Website: https://armandoassuncao.github.io
 	LinkedIn: https://www.linkedin.com/in/armandoassuncao
 	From: Minas Gerais, Brazil
 		

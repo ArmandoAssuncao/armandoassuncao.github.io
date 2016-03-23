@@ -23,7 +23,7 @@ function bottomSheet(){
 
 		$('footer').fadeTo(0, 0.95).animate({bottom: 305}, 700, 'linear');
 
-		$('#contact_form').animate({height: 305}, 700, 'linear');
+		$('#contact').animate({height: 305}, 700, 'linear');
 		$('#skills').animate({height: 305}, 700, 'linear');
 
 		switchContent();
@@ -40,7 +40,7 @@ function bottomSheet(){
 
 		$('footer').fadeTo(0, 0.95).animate({bottom: 0}, 700, 'linear');
 
-		$('#contact_form').animate({height: 0}, 700, 'linear');
+		$('#contact').animate({height: 0}, 700, 'linear');
 		$('#skills').animate({height: 0}, 700, 'linear');
 
 		darkenPage(false);
@@ -56,11 +56,11 @@ function bottomSheet(){
 
 		$(element).addClass('hideContent');
 
-		$('#contact_form').css('display', '');
+		$('#contact').css('display', '');
 		$('#skills').css('display', '');
 
 		if(btnID == contact)
-			$('#contact_form').css('display', 'inline');
+			$('#contact').css('display', 'inline');
 		else if(btnID == skills)
 			$('#skills').css('display', 'inline');
 	}

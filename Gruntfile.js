@@ -133,7 +133,22 @@ module.exports = function(grunt){
 						dest: '<%= project.dist_static_fonts %>',
 					},
 				]
-			}
+			},
+			others: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'<%= project.src %>/favicon.ico',
+							'<%= project.src %>/humans.txt',
+							'<%= project.src %>/robots.txt'
+						],
+						dest: '<%= project.dist %>/',
+						filter: 'isFile',
+						flatten: true
+					},
+				]
+			},
 		},
 
 
@@ -347,6 +362,7 @@ module.exports = function(grunt){
 		'copy:dist_js',
 		'copy:dist_img',
 		'copy:dist_fonts',
+		'copy:others',
 		'processhtml:dist',
 		'http-server:dist'
 	]);

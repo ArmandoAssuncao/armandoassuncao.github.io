@@ -9,6 +9,7 @@ module.exports = function(grunt){
 			src_static: '<%= project.src %>/static',
 			src_static_css: '<%= project.src_static %>/css',
 			src_static_js: '<%= project.src_static %>/js',
+			src_static_files: '<%= project.src_static %>/files',
 			src_static_third_party: '<%= project.src_static %>/third_party',
 			src_static_img: '<%= project.src_static %>/img',
 			src_static_fonts: '<%= project.src_static %>/fonts',
@@ -19,6 +20,7 @@ module.exports = function(grunt){
 			dist_static: '<%= project.dist %>/static',
 			dist_static_css: '<%= project.dist_static %>/css',
 			dist_static_js: '<%= project.dist_static %>/js',
+			dist_static_files: '<%= project.dist_static %>/files',
 			dist_static_third_party: '<%= project.dist_static %>/third_party',
 			dist_static_img: '<%= project.dist_static %>/img',
 			dist_static_fonts: '<%= project.dist_static %>/fonts',
@@ -38,6 +40,7 @@ module.exports = function(grunt){
 						'<%= project.dist_static %>',
 						'<%= project.dist_static_css %>',
 						'<%= project.dist_static_js %>',
+						'<%= project.dist_static_files %>',
 						'<%= project.dist_static_third_party %>',
 						'<%= project.dist_static_img %>',
 						'<%= project.dist_static_fonts %>',
@@ -132,6 +135,18 @@ module.exports = function(grunt){
 						src: '**',
 						dest: '<%= project.dist_static_fonts %>',
 					},
+				]
+			},
+			dist_files: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src_static_files %>/',
+						src: '**',
+						dest: '<%= project.dist_static_files %>/',
+						filter: 'isFile',
+						flatten: false
+					}
 				]
 			},
 			others: {
@@ -362,6 +377,7 @@ module.exports = function(grunt){
 		'copy:dist_js',
 		'copy:dist_img',
 		'copy:dist_fonts',
+		'copy:dist_files',
 		'copy:others',
 		'processhtml:dist',
 		'http-server:dist'

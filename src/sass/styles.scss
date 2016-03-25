@@ -83,6 +83,10 @@ main {
 		width: 70px;
 		margin: 0 10px;
 
+		> a:hover {
+			color: #FF9800;
+		}
+
 		span {
 			font-size: 16px;
 		}

@@ -48,47 +48,53 @@
 </nav>-->
 
 <main layout="column" flex="80" flex-xs="100" flex-sm="100" layout-align="center center">
-	<div class="container" layout="column" flex="100" layout-align="center center">
-		<div>
+	<section>
+		<div class="container" layout="column" flex="100" layout-align="center center">
 			<img src="static/img/me256x256.jpg" id="foto" class="circular">
+			<h1 id="my_name">Armando Assunção</h1>
+			<div id="description" class="center-align">
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae volutpat ipsum,
+				sit amet ultricies ligula. Nullam felis magna, mattis quis tempus eget, ullamcorper quis nunc.
+				Duis sem ante, accumsan eget leo a, pretium bibendum justo. Ut condimentum, ex tincidunt porttitor rutrum,
+				ante sem varius leo, nec imperdiet erat eros tincidunt purus. Nulla luctus mollis dui, eu accumsan nisi consequat at.
+				Curabitur iaculis ultricies nunc a ornare. Sed lacinia id nisl quis tincidunt.
+				</p>
+			</div>
+			<ul id="social" layout="row" layout-align="center center">
+				<li>
+					<a href="https://www.facebook.com/armando.455" class="white-text">
+						<i class="fa fa-facebook-square medium"></i>
+						<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/ArmandoAssuncao" class="white-text">
+						<i class="fa fa-github medium"></i>
+						<span class="fa-github-text" hide show-gt-xs> Github</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/armandoassuncao" class="white-text">
+						<i class="fa fa-linkedin-square medium"></i>
+						<span class="fa-github-text" hide show-gt-xs> LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://angel.co/armandoassuncao" class="white-text">
+						<i class="fa fa-angellist medium"></i>
+						<span class="fa-github-text" hide show-gt-xs> AngelList</span>
+					</a>
+				</li>
+				<li>
+					<a href="static/files/curriculo-armandoassuncao.pdf" class="white-text">
+						<i class="fa fa-file-pdf-o medium"></i>
+						<span class="fa-github-text" hide show-gt-xs> Curriculo</span>
+					</a>
+				</li>
+			</ul>
 		</div>
-		<h1 id="my_name">Armando Assunção</h1>
-		<div id="description" class="center-align">
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae volutpat ipsum,
-			sit amet ultricies ligula. Nullam felis magna, mattis quis tempus eget, ullamcorper quis nunc.
-			Duis sem ante, accumsan eget leo a, pretium bibendum justo. Ut condimentum, ex tincidunt porttitor rutrum,
-			ante sem varius leo, nec imperdiet erat eros tincidunt purus. Nulla luctus mollis dui, eu accumsan nisi consequat at.
-			Curabitur iaculis ultricies nunc a ornare. Sed lacinia id nisl quis tincidunt.
-			</p>
-		</div>
-		<ul id="social" layout="row" layout-align="center center">
-			<li>
-				<a href="https://www.facebook.com/armando.455" class="white-text">
-					<i class="fa fa-facebook-square medium"></i>
-					<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/ArmandoAssuncao" class="white-text">
-					<i class="fa fa-github medium"></i>
-					<span class="fa-github-text" hide show-gt-xs> Github</span>
-				</a>
-			</li>
-			<li>
-				<i class="fa fa-linkedin-square medium"></i>
-				<span class="fa-github-text" hide show-gt-xs> LinkedIn</span>
-			</li>
-			<li>
-				<i class="fa fa-angellist medium"></i>
-				<span class="fa-github-text" hide show-gt-xs> AngelList</span>
-			</li>
-			<li>
-				<i class="fa fa-file-pdf-o medium"></i>
-				<span class="fa-github-text" hide show-gt-xs> Curriculo</span>
-			</li>
-		</ul>
-	</div>
+	</section>
 </main>
 <div flex="20"></div><div id="skills" class="container-bottomsheet" ng-controller="SkillsController">
 	<md-toolbar class="my-toolbar" hide show-xs>

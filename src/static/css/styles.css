@@ -64,6 +64,8 @@ main {
     vertical-align: middle;
     width: 70px;
     margin: 0 10px; }
+    #social li > a:hover {
+      color: #FF9800; }
     #social li span {
       font-size: 16px; }
     #social li .small {

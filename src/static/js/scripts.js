@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$('#btn_contact').on('click', bottomSheet);
 	$('#btn_skills').on('click', bottomSheet);
 	$('#btn_moreskills').on('click', showMoreSkills);
+	formSubmit();
 });
 
 function bottomSheet(){
@@ -77,6 +78,26 @@ function showMoreSkills(){
 		});
 	});
 
+}
+
+function formSubmit(){
+	$('#form-submit').click(function(e){
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/armando.assuncao.93@gmail.com',
+			method: "POST",
+			dataType: 'json',
+			data: {
+				message: $('#form-message').val(),
+				_replyto: $('#form-email').val(),
+				name: $('#form-name').val()
+			},
+			success: function(data) {
+			},
+			error: function(data) {
+			}
+		});
+	});
 }
 
 // Helpers ////////

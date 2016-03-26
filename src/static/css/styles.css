@@ -68,10 +68,18 @@ main {
       color: #FF9800; }
     #social li span {
       font-size: 16px; }
-    #social li .small {
-      font-size: 1.5em; }
-    #social li .medium {
-      font-size: 2.2em; }
+
+#contact #submit_success, #contact #submit_error {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  height: 200px; }
+  #contact #submit_success > span, #contact #submit_error > span {
+    margin-left: 15px; }
+#contact #submit_success > i {
+  color: #00AB00; }
+#contact #submit_error > i {
+  color: #E60000; }
 
 #skills {
   min-width: 250px; }
@@ -87,7 +95,7 @@ main {
       width: 100%;
       height: 8px;
       margin-top: 5px; }
-      #skills .skill .skill-bar .skill12 {
+      #skills .skill .skill-bar .skill-value {
         height: inherit;
         background-color: #FF9800; }
 
@@ -129,10 +137,16 @@ a:hover, a:visited, a:link, a:active {
 .white-text {
   color: white; }
 
+.-smallicon {
+  font-size: 1.5em; }
+
+.-mediumicon {
+  font-size: 2.2em; }
+
 @media (max-width: 961px) {
   .container {
     width: 95%; } }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     width: 95%; }
 
@@ -149,6 +163,8 @@ a:hover, a:visited, a:link, a:active {
     position: initial;
     height: auto;
     display: initial; }
+    .container-bottomsheet#contact #submit_success, .container-bottomsheet#contact #submit_error {
+      font-size: 18px; }
     .container-bottomsheet#skills {
       padding-bottom: 30px; }
       .container-bottomsheet#skills > .container {

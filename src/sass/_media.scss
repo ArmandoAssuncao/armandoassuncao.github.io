@@ -12,7 +12,7 @@
 	}
 }
 
-@media (max-width:600px) {
+@media (max-width:599px) {
 	.container {
 		width: 95%;
 	}
@@ -34,6 +34,12 @@
 		position: initial;
 		height: auto;
 		display: initial;
+
+		&#contact {
+			#submit_success, #submit_error {
+				font-size: 18px;
+			}
+		}
 
 		&#skills {
 			padding-bottom: 30px;

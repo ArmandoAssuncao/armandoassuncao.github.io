@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$('#btn_contact').on('click', bottomSheet);
 	$('#btn_skills').on('click', bottomSheet);
 	$('#btn_moreskills').on('click', showMoreSkills);
-	formSubmit();
+	$('#form-submit').on('click', contactValidate);
 });
 
 function bottomSheet(){
@@ -77,27 +77,44 @@ function showMoreSkills(){
 			})
 		});
 	});
-
 }
 
-function formSubmit(){
-	$('#form-submit').click(function(e){
-		e.preventDefault();
-		$.ajax({
-			url: '//formspree.io/armando.assuncao.93@gmail.com',
-			method: "POST",
-			dataType: 'json',
-			data: {
-				message: $('#form-message').val(),
-				_replyto: $('#form-email').val(),
-				name: $('#form-name').val()
-			},
-			success: function(data) {
-			},
-			error: function(data) {
-			}
-		});
+function contactValidate(){
+	if($('#form-name').val() === '' || $('#form-email').val() === '' || $('#form-message').val() === '') {
+		//
+	}
+	else{
+		contactSubmit();
+	}
+}
+
+function contactSubmit(){
+	$.ajax({
+		url: '//formspree.io/armando.assuncao.93@gmail.com',
+		method: "POST",
+		dataType: 'json',
+		data: {
+			message: $('#form-message').val(),
+			_replyto: $('#form-email').val(),
+			name: $('#form-name').val()
+		},
+		success: function(data) {
+			contactSubmitOk(true);
+		},
+		error: function(data) {
+			contactSubmitOk(false);
+		}
 	});
+}
+
+function contactSubmitOk(success){
+	$('#contact_form').fadeOut(500);
+	if(success){
+		$('#submit_success').css('display', 'flex');
+	}
+	else{
+		$('#submit_error').css('display', 'flex');
+	}
 }
 
 // Helpers ////////

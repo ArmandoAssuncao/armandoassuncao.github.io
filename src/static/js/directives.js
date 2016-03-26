@@ -13,7 +13,7 @@ appModule.directive('skill', function(){
 	directive.template =
 			'<span class="skill-name">{{::name}}</span>'+
 			'<span class="skill-level">{{::generate_level(value)}}</span>'+
-			'<div class="skill-bar"><div class="skill12" flex="{{value}}"></div></div>';
+			'<div class="skill-bar"><div class="skill-value" flex="{{value}}"></div></div>';
 
 	return directive;
 })

@@ -70,31 +70,31 @@
 			<ul id="social" layout="row" layout-align="center center">
 				<li>
 					<a href="https://www.facebook.com/armando.455" class="white-text">
-						<i class="fa fa-facebook-square medium"></i>
+						<i class="fa fa-facebook-square -mediumicon"></i>
 						<span class="fa-facebook-text" hide show-gt-xs> Facebook</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://github.com/ArmandoAssuncao" class="white-text">
-						<i class="fa fa-github medium"></i>
+						<i class="fa fa-github -mediumicon"></i>
 						<span class="fa-github-text" hide show-gt-xs> Github</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://www.linkedin.com/in/armandoassuncao" class="white-text">
-						<i class="fa fa-linkedin-square medium"></i>
+						<i class="fa fa-linkedin-square -mediumicon"></i>
 						<span class="fa-github-text" hide show-gt-xs> LinkedIn</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://angel.co/armandoassuncao" class="white-text">
-						<i class="fa fa-angellist medium"></i>
+						<i class="fa fa-angellist -mediumicon"></i>
 						<span class="fa-github-text" hide show-gt-xs> AngelList</span>
 					</a>
 				</li>
 				<li>
 					<a href="static/files/curriculo-armandoassuncao.pdf" class="white-text">
-						<i class="fa fa-file-pdf-o medium"></i>
+						<i class="fa fa-file-pdf-o -mediumicon"></i>
 						<span class="fa-github-text" hide show-gt-xs> Curriculo</span>
 					</a>
 				</li>
@@ -142,7 +142,7 @@
 		</div>
 	</md-toolbar>
 	<div class="container">
-		<div layout="row" layout-wrap layout-align="center">
+		<div layout="row" layout-wrap layout-align="center center">
 			<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-xs="95" flex-sm="95" flex-md="70" flex-gt-md="70">
 				<div layout="row" layout-wrap layout-align="center center">
 					<div layout="row" layout-wrap flex='100' layout-align="center center">
@@ -175,6 +175,12 @@
 					</div>
 				</div>
 			</form>
+		</div>
+		<div id="submit_success" layout="row" layout-wrap layout-align="center center">
+			<i class="fa fa-check -smallicon"></i> <span>Sua mensagem foi enviada ;-)</span>
+		</div>
+		<div id="submit_error" layout="row" layout-wrap layout-align="center center">
+			<i class="fa fa-exclamation -smallicon"></i> <span>Ops, houve um error ao enviar a mensagem :-(</span>
 		</div>
 	</div>
 </div>

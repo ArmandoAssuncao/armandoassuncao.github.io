@@ -38,7 +38,7 @@
 		</div>
 	</md-toolbar>
 	<div class="container">
-		<div layout="row" layout-wrap layout-align="center">
+		<div layout="row" layout-wrap layout-align="center center">
 			<form id="contact_form" name="form-contact" onsubmit="javascript:return false" flex="100" flex-xs="95" flex-sm="95" flex-md="70" flex-gt-md="70">
 				<div layout="row" layout-wrap layout-align="center center">
 					<div layout="row" layout-wrap flex='100' layout-align="center center">
@@ -71,6 +71,12 @@
 					</div>
 				</div>
 			</form>
+		</div>
+		<div id="submit_success" layout="row" layout-wrap layout-align="center center">
+			<i class="fa fa-check -smallicon"></i> <span>Sua mensagem foi enviada ;-)</span>
+		</div>
+		<div id="submit_error" layout="row" layout-wrap layout-align="center center">
+			<i class="fa fa-exclamation -smallicon"></i> <span>Ops, houve um error ao enviar a mensagem :-(</span>
 		</div>
 	</div>
 </div>

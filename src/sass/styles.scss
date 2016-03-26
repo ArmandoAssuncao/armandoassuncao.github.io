@@ -90,14 +90,27 @@ main {
 		span {
 			font-size: 16px;
 		}
+	}
+}
 
-		.small {
-			font-size: 1.5em;
-		}
+#contact {
+	#submit_success, #submit_error {
+		display: none;
+		text-align: center;
+		font-size: 24px;
+		height: 200px;
 
-		.medium {
-			font-size: 2.2em;
+		> span {
+			margin-left: 15px;
 		}
+	}
+
+	#submit_success > i {
+		color: #00AB00;
+	}
+
+	#submit_error > i {
+		color: #E60000;
 	}
 }
 
@@ -122,7 +135,7 @@ main {
 			height: 8px;
 			margin-top: 5px;
 
-			.skill12 {
+			.skill-value {
 				height: inherit;
 				background-color: $secondaryColor;
 			}
@@ -178,6 +191,14 @@ a:hover, a:visited, a:link, a:active {
 
 .white-text {
 	color: white;
+}
+
+.-smallicon {
+	font-size: 1.5em;
+}
+
+.-mediumicon {
+	font-size: 2.2em;
 }
 
 @import "media";

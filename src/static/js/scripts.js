@@ -8,6 +8,7 @@ $(document).ready(function(){
 function bottomSheet(){
 	var element = this;
 	var container = '.container-bottomsheet';
+	var timeAnimate = 550;
 
 	if($('footer').hasClass('showing') && $(element).hasClass('hideContent')){
 		hide();
@@ -22,10 +23,10 @@ function bottomSheet(){
 	function show(){
 		$('footer').addClass('showing');
 
-		$('footer').fadeTo(0, 0.95).animate({bottom: 305}, 700, 'linear');
+		$('footer').fadeTo(0, 0.95).animate({bottom: 305}, timeAnimate, 'linear');
 
-		$('#contact').animate({height: 305}, 700, 'linear');
-		$('#skills').animate({height: 305}, 700, 'linear');
+		$('#contact').animate({height: 305}, timeAnimate, 'linear');
+		$('#skills').animate({height: 305}, timeAnimate, 'linear');
 
 		switchContent();
 		darkenPage(true);
@@ -39,10 +40,10 @@ function bottomSheet(){
 		$('footer').removeClass('showing');
 		$(element).removeClass('hideContent');
 
-		$('footer').fadeTo(0, 0.95).animate({bottom: 0}, 700, 'linear');
+		$('footer').fadeTo(0, 0.95).animate({bottom: 0}, timeAnimate, 'linear');
 
-		$('#contact').animate({height: 0}, 700, 'linear');
-		$('#skills').animate({height: 0}, 700, 'linear');
+		$('#contact').animate({height: 0}, timeAnimate, 'linear');
+		$('#skills').animate({height: 0}, timeAnimate, 'linear');
 
 		darkenPage(false);
 	}
@@ -79,11 +80,13 @@ function showMoreSkills(){
 	});
 }
 
+
 function contactValidate(){
 	if($('#form-name').val() === '' || $('#form-email').val() === '' || $('#form-message').val() === '') {
 		//
 	}
 	else{
+		$('#form-submit').off();
 		contactSubmit();
 	}
 }

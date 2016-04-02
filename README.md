@@ -2,7 +2,7 @@
 
 Meu site pessoal utilizando o conceito de **SPA** e interface **Material Design** do Google.
 
-### Tecnológias Utilizadas
+### Tecnologias Utilizadas
 - **Front-End**
   - HTML5 / CSS3 / SASS
   - Javascript/JQuery

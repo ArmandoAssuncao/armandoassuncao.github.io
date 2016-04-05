@@ -15,12 +15,28 @@ footer {
 	z-index: 1000;
 	box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
 
+	.btn-footer {
+		min-width: 130px;
+		height: inherit;
+		border-bottom: solid 2px $primaryColor;
+		cursor: pointer;
+
+		&.-clicked {
+			background-color: lighten(black, 10%);
+			border-top: solid 2px $secondaryColor;
+			border-bottom: 0;
+			border-bottom: none;
+			color: $secondaryColor;
+		}
+
+		&:hover {
+			@extend .-clicked;
+		}
+	}
+
 	.title {
 		font-size: 22px;
 		font-weight: 400;
-		cursor: pointer;
-		border-bottom: 1px solid;
-		color: black;
 	}
 }
 
@@ -64,7 +80,6 @@ main {
 	text-transform: capitalize;
 	text-align: justify;
 	letter-spacing: 2px;
-	//overflow: auto;
 }
 
 #foto{
@@ -79,12 +94,11 @@ main {
 	li {
 		text-align: center;
 		vertical-align: middle;
-		//height: 70px;
 		width: 70px;
 		margin: 0 10px;
 
 		> a:hover {
-			color: #FF9800;
+			color: $secondaryColor;
 		}
 
 		span {

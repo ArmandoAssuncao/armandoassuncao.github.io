@@ -12,12 +12,20 @@ footer {
   z-index: 1000;
   -webkit-box-shadow: 0 0 15px rgba(20, 20, 20, 0.8);
           box-shadow: 0 0 15px rgba(20, 20, 20, 0.8); }
+  footer .btn-footer {
+    min-width: 130px;
+    height: inherit;
+    border-bottom: solid 2px #252525;
+    cursor: pointer; }
+    footer .btn-footer.-clicked, footer .btn-footer:hover {
+      background-color: #1a1a1a;
+      border-top: solid 2px #FF9800;
+      border-bottom: 0;
+      border-bottom: none;
+      color: #FF9800; }
   footer .title {
     font-size: 22px;
-    font-weight: 400;
-    cursor: pointer;
-    border-bottom: 1px solid;
-    color: black; }
+    font-weight: 400; }
 
 .container-bottomsheet {
   display: none;

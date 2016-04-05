@@ -38,7 +38,7 @@ function bottomSheet(){
 
 	function hide(){
 		$('footer').removeClass('showing');
-		$(element).removeClass('hideContent');
+		$(element).removeClass('hideContent -clicked');
 
 		$('footer').fadeTo(0, 0.95).animate({bottom: 0}, timeAnimate, 'linear');
 
@@ -53,18 +53,22 @@ function bottomSheet(){
 		var skills = '#btn_skills';
 		var btnID = '#' + element.id;
 
-		$(contact).removeClass('hideContent');
-		$(skills).removeClass('hideContent');
+		$(contact).removeClass('hideContent -clicked');
+		$(skills).removeClass('hideContent -clicked');
 
 		$(element).addClass('hideContent');
 
 		$('#contact').css('display', '');
 		$('#skills').css('display', '');
 
-		if(btnID == contact)
+		if(btnID == contact){
 			$('#contact').css('display', 'inline');
-		else if(btnID == skills)
+			$(contact).addClass('-clicked');
+		}
+		else if(btnID == skills){
 			$('#skills').css('display', 'inline');
+			$(skills).addClass('-clicked');
+		}
 	}
 }
 

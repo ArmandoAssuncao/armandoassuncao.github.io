@@ -56,6 +56,10 @@ footer {
 
 main {
 	margin-bottom: 45px;
+
+	#section_main {
+		width: 100%;
+	}
 }
 
 .container {
@@ -77,9 +81,9 @@ main {
 #description {
 	margin-top: 20px;
 	width: 65%;
-	text-transform: capitalize;
 	text-align: justify;
 	letter-spacing: 2px;
+	font-size: 18px;
 }
 
 #foto{
@@ -215,4 +219,7 @@ a:hover, a:visited, a:link, a:active {
 	font-size: 2.2em;
 }
 
+._bold {
+	font-weight: bold;
+}
 @import "media";

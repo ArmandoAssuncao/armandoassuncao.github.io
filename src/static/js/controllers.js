@@ -15,5 +15,8 @@ appModule.controller('SkillsController', function($scope){
 		{name: 'Git', value: 40},
 		{name: 'MongoDB', value: 45},
 		{name: 'SQL', value: 40},
+		{name: 'Android', value: 60},
+		{name: 'PHP', value: 40},
+		{name: 'C#', value: 40},
 	];
 })

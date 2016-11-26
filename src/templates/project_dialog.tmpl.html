@@ -1,0 +1,40 @@
+<md-dialog aria-label="{{project.name}}" class="md-dialog-project">
+	<form ng-cloak>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>{{::project.name}}</h2>
+				<span flex></span>
+				<button class="md-icon-button md-button md-ink-ripple" type="button" ng-click="cancel()">
+					<md-icon aria-label="Close dialog" class="ng-scope material-icons"><i class="fa fa-close"></i></md-icon>
+					<div class="md-ripple-container"></div>
+				</button>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content>
+			<div class="md-dialog-content" layout="row" layout-align="center start" layout-wrap>
+				<div layout="row" flex="50" flex-xs="100" layout-align="center start" layout-wrap class="project-dialog-imgs">
+					<img ng-src="{{::url}}" ng-repeat="url in project.imgs">
+				</div>
+
+				<div layout="row" flex="50" flex-xs="100" flex-order-xs="-1" layout-align="center start" layout-wrap class="project-dialog-description">
+					<p class="-role" flex="grow">{{::project.type}} <span class="-date">{{::project.datastart}} - {{::project.dataend}}</span></p>
+					<p class="-developers" flex="grow" ng-hide="project.authors.length === 0">
+						Autor(es): <span ng-repeat="author in project.authors | orderBy track by $index">{{::author}}</span>
+					</p>
+					<p class="-developers" flex="grow" ng-hide="project.collaborators.length === 0">
+						Colaborador(es): <span ng-repeat="collaborator in project.collaborators | orderBy track by $index">{{::collaborator}}</span>
+					</p>
+					<p class="-technologies" flex="grow">{{::project.technologies}}</p>
+					<p class="-description" flex="grow" ng-bind-html="project.description" class="_justify"></p>
+				</div>
+			</div>
+		</md-dialog-content>
+
+		<md-dialog-actions layout="row">
+			<md-button href="{{url.url}}" target="_blank" ng-repeat="url in project.urls">
+			{{::url.name}}
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

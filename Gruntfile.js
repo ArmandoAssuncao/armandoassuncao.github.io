@@ -15,6 +15,7 @@ module.exports = function(grunt){
 			src_static_fonts: '<%= project.src_static %>/fonts',
 			src_jade: '<%= project.src %>/jade',
 			src_sass: '<%= project.src %>/sass',
+			src_templates: '<%= project.src %>/templates',
 
 			dist: '<%= project.app %>',
 			dist_static: '<%= project.dist %>/static',
@@ -24,6 +25,7 @@ module.exports = function(grunt){
 			dist_static_third_party: '<%= project.dist_static %>/third_party',
 			dist_static_img: '<%= project.dist_static %>/img',
 			dist_static_fonts: '<%= project.dist_static %>/fonts',
+			dist_templates: '<%= project.dist %>/templates',
 		},
 
 		tag: {
@@ -134,6 +136,16 @@ module.exports = function(grunt){
 						cwd: '<%= project.src_static_fonts %>',
 						src: '**',
 						dest: '<%= project.dist_static_fonts %>',
+					},
+				]
+			},
+			dist_templates: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= project.src_templates %>',
+						src: '**',
+						dest: '<%= project.dist_templates %>',
 					},
 				]
 			},
@@ -270,6 +282,7 @@ module.exports = function(grunt){
 						'<%= project.src_static_third_party %>/angular-aria/angular-aria.min.js',
 						'<%= project.src_static_third_party %>/angular-material/angular-material.min.js',
 						'<%= project.src_static_third_party %>/angular-messages/angular-messages.min.js',
+						'<%= project.src_static_third_party %>/angular-sanitize/angular-sanitize.min.js',
 					],
 				}
 			},
@@ -377,6 +390,7 @@ module.exports = function(grunt){
 		'copy:dist_js',
 		'copy:dist_img',
 		'copy:dist_fonts',
+		'copy:dist_templates',
 		'copy:dist_files',
 		'copy:others',
 		'processhtml:dist',

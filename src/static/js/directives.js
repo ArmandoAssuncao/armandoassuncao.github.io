@@ -3,7 +3,7 @@ appModule.directive('skill', function(){
 
 	directive.restrict = 'AE';
 
-	directive.controller = 'skillController'
+	directive.controller = 'SkillController'
 
 	directive.scope = {
 		name: '@name',
@@ -16,29 +16,38 @@ appModule.directive('skill', function(){
 			'<div class="skill-bar"><div class="skill-value" flex="{{value}}"></div></div>';
 
 	return directive;
-})
+});
 
-.controller('skillController', function($scope){
-	$scope.levels = [
-		{ name: 'básico', value_min: 0, value_max: 39 },
-		{ name: 'intermediário', value_min: 40, value_max: 69 },
-		{ name: 'avançado', value_min: 70, value_max: 89 },
-		{ name: 'expert', value_min: 90, value_max: 100 }
-	];
+appModule.directive('projectPreview', function(){
+	var directive = {};
 
-	$scope.generate_level = function(value) {
-		if(value >= $scope.levels[3].value_min){
-			return $scope.levels[3].name;
-		}
-		else if(value >= $scope.levels[2].value_min){
-			return $scope.levels[2].name;
-		}
-		else if(value >= $scope.levels[1].value_min){
-			return $scope.levels[1].name;
-		}
-		else if(value >= $scope.levels[0].value_min){
-			return $scope.levels[0].name;
-		}
-		return 'indefinido';
+	directive.restrict = 'E';
+
+	directive.controller = 'ProjectPreviewController';
+	directive.controllerAs = "ppc";
+
+/*	var project = {
+		name: '@',
+		authors: '@',
+		collaborators: '@',
+		technologies: '@',
+		type: '@',
+		description: '@',
+		datastart: '@',
+		dataend: '@',
+		imgthumbnail: '@',
+		urls: '@',
+		imgs: '@'
+	}*/
+
+	var project = {
+		projectItems: '='
 	}
-})
+
+	directive.scope = project;
+	directive.bindToController = project;
+
+	directive.templateUrl = '/templates/project_preview.tmpl.html';
+
+	return directive;
+});

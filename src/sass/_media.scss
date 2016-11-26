@@ -49,10 +49,32 @@
 				overflow: hidden;
 			}
 
-			> #container-showmore {
+			> #container_showmore_skills {
 				height: 50px;
 				margin: 10px 0;
 			}
+		}
+
+		&#portfolio {
+			> .container {
+				height: 350px;
+				overflow: hidden;
+			}
+
+			> #container_showmore_portfolio {
+				height: 50px;
+				margin: 10px 0;
+			}
+		}
+	}
+
+	.md-dialog-project {
+		.project-dialog-imgs, .project-dialog-description {
+			max-height: initial;
+		}
+
+		.project-dialog-imgs {
+			padding-top: 25px;
 		}
 	}
 }

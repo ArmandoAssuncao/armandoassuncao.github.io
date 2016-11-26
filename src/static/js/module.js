@@ -1,4 +1,4 @@
-var appModule = angular.module('ArmandoAssuncao', ['ngMaterial', 'ngAnimate', 'ngAria']);
+var appModule = angular.module('ArmandoAssuncao', ['ngMaterial', 'ngAnimate', 'ngAria', 'ngSanitize']);
 
 appModule.config(function($mdThemingProvider) {
 	$mdThemingProvider.definePalette('darkTheme', {

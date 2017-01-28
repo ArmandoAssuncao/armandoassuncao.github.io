@@ -1,5 +1,5 @@
 {
-  "name": "ArmandoAssuncao",
+  "name": "armando_assuncao",
   "description": "Site pessoal de Armando Assuncao",
   "main": "index.js",
   "authors": [
@@ -16,9 +16,16 @@
     "tests"
   ],
   "devDependencies": {
-    "angular-material": "~1.0.5",
+    "angular": "=1.5.8",
+    "angular-material": "=1.0.5",
     "font-awesome": "~4.5.0",
     "jquery": "~2.2.0",
-    "angular-sanitize": "^1.5.8"
+    "angular-sanitize": "=1.5.8",
+    "angular-messages": "=1.5.8",
+    "angular-animate": "=1.5.8",
+    "angular-aria": "=1.5.8"
+  },
+  "resolutions": {
+    "angular": "=1.5.8"
   }
 }

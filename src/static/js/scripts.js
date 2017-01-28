@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$('#btn_more_skills').on('click', showMoreSkills);
 	$('#btn_more_projects').on('click', showMoreProjects);
 	$('#form-submit').on('click', contactValidate);
+	setBirthDate();
 });
 
 function bottomSheet(){
@@ -154,4 +155,12 @@ function darkenPage(show){
 	else{
 		$('#darken_page').fadeTo(500, 0, function(){this.remove()});
 	}
+}
+
+function setBirthDate(){
+	var birthYear = 1993;
+	var currentYear = new Date().getFullYear();
+	var age = currentYear - birthYear - 1;
+
+	document.querySelector('.birth-date').textContent = age;
 }

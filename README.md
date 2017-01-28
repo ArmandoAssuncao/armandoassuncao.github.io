@@ -2,6 +2,14 @@
 
 Meu site pessoal utilizando o conceito de **SPA** e interface **Material Design** do Google.
 
+#### Como Usar
+```
+bower install
+npm install
+grunt dev //servidor dev: localhost:8081
+grunt dist //servidor dist: localhost:8082
+```
+
 ### Tecnologias Utilizadas
 - **Front-End**
   - HTML5 / CSS3 / SASS

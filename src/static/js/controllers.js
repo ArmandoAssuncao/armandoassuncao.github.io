@@ -6,7 +6,7 @@ appModule.controller('SkillsController', function($scope){
         {name: 'HTML5/CSS3', value: 70},
 		{name: 'C/C++', value: 35},
 		{name: 'Java', value: 45},
-		{name: 'JavaScript', value: 55},
+		{name: 'JavaScript', value: 85},
 		{name: 'Python', value: 35},
 		{name: 'Scala', value: 20},
 		{name: 'AngularJS', value: 50},
@@ -18,6 +18,8 @@ appModule.controller('SkillsController', function($scope){
 		{name: 'Android', value: 60},
 		{name: 'PHP', value: 40},
 		{name: 'C#', value: 40},
+		{name: 'Typescript', value: 50},
+		{name: 'React-native', value: 50},
 	];
 });
 

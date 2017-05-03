@@ -56,6 +56,26 @@ appModule.factory('projectsFactory', function(){
 					'static/img/portfolio/wpp_web_customizer/screenshot-003.jpeg',
 					'static/img/portfolio/wpp_web_customizer/screenshot-005.jpeg'
 				]
+			},
+
+			{
+				name: 'Landpage Biblioteca App',
+				authors: ['Armando Assunção'],
+				collaborators: [],
+				technologies: 'HTML/CSS3, Javascript/JQuery, MaterializeCSS',
+				type: 'Projeto Pessoal',
+				description: 'Land page feita para divulgação do aplicativo Biblioteca App.',
+				datastart: '2017',
+				dataend: '2017',
+				imgthumbnail: 'static/img/portfolio/page_bibliotecaapp/thumbnail.jpg',
+				urls: [
+					{ name: 'Ir para o site', url: 'http://bibliotecaapp.com' },
+					{ name: 'Ver no Github', url: 'https://github.com/ArmandoAssuncao/bibliotecaapp_page' }
+				],
+				imgs: [
+					'static/img/portfolio/page_bibliotecaapp/screenshot-001.jpg',
+					'static/img/portfolio/page_bibliotecaapp/screenshot-002.jpg'
+				]
 			}
 
 		]

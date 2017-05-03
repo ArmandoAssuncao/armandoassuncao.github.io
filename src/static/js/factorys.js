@@ -76,6 +76,33 @@ appModule.factory('projectsFactory', function(){
 					'static/img/portfolio/page_bibliotecaapp/screenshot-001.jpg',
 					'static/img/portfolio/page_bibliotecaapp/screenshot-002.jpg'
 				]
+			},
+
+			{
+				name: 'Hardmob Monitor',
+				authors: ['Armando Assunção'],
+				collaborators: [],
+				technologies: 'HTML/CSS3, Javascript/JQuery, Bootstrap',
+				type: 'Projeto Pessoal',
+				description: '<p>Extensão Chrome: Monitora a página de promoções do site <a target="_blank" href="http://www.hardmob.com.br/promocoes/">hardmob</a>, buscando por palavras pre-definidas.</p>\
+					<p>funcionalidades:\
+						<ul>\
+							<li>Monitoramento por palavras-chave</li>\
+							<li>Lista as promoções desejadas</li>\
+							<li>Notificação de promoções</li>\
+						</ul>\
+					</p>\
+				',
+				datastart: '2017',
+				dataend: '2017',
+				imgthumbnail: 'static/img/portfolio/hardmob_monitor/thumbnail.jpg',
+				urls: [
+					{ name: 'Ver na Chrome Webstore', url: 'https://chrome.google.com/webstore/detail/hardmob-monitor-de-promo%C3%A7/efldjgjbggghcpihdheobmjhhebknoap' },
+					{ name: 'Ver no Github', url: 'https://github.com/ArmandoAssuncao/Hardmob_Monitor' }
+				],
+				imgs: [
+					'static/img/portfolio/hardmob_monitor/screenshot-001.jpg'
+				]
 			}
 
 		]

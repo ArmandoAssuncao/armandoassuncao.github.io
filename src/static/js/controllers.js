@@ -10,16 +10,17 @@ appModule.controller('SkillsController', function($scope){
 		{name: 'Python', value: 35},
 		{name: 'Scala', value: 20},
 		{name: 'AngularJS', value: 50},
-		{name: 'NodeJS', value: 50},
+		{name: 'NodeJS', value: 70},
 		{name: 'Grunt', value: 60},
 		{name: 'Git', value: 40},
-		{name: 'MongoDB', value: 45},
+		{name: 'MongoDB', value: 65},
 		{name: 'SQL', value: 40},
 		{name: 'Android', value: 60},
 		{name: 'PHP', value: 40},
 		{name: 'C#', value: 40},
 		{name: 'Typescript', value: 50},
-		{name: 'React-native', value: 50},
+		{name: 'React-native', value: 70},
+		{name: 'Ruby on Rails', value: 50},
 	];
 });
 
